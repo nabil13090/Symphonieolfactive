@@ -1,0 +1,81 @@
+body{
+    font-family: Baskerville Old Face;
+    color: rgb(2, 2, 100);
+}
+
+.txt{
+    animation: Scroll 10s linear infinite;
+    color: azure !important;
+}
+
+
+@keyframes Scroll {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+    }
+
+.top{
+    background-color: rgb(2, 2, 100);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+header{
+    position: relative;
+}
+header p {
+
+    position: relative;
+    top: 50%;
+
+}
+
+ul li{
+    font-family: Baskerville Old Face;
+    color: rgb(2, 2, 100)  !important;
+}
+.texttop{
+    color: azure;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    font-family: Baskerville Old Face;
+}
+
+main .btn{
+    background-color: rgb(2, 2, 100);
+}
+
+.cards-wrapper{
+    display: flex;
+}
+
+
+footer{
+    background-color: rgb(2, 2, 100) !important;
+    color: azure;
+    font-family: Baskerville Old Face;
+
+}
+
+.d-flex .pi{
+    color: rgb(73, 71, 71) !important;
+    font-family: Baskerville Old Face;
+    font-size: calc(9px + 4vw);
+}
+
+main section h1{
+    font-family: Baskerville Old Face;
+}
+
+
+
+section .avs{
+    background-color: rgb(2, 2, 100) !important;
+}
