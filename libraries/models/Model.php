@@ -1,10 +1,15 @@
 <?php
 
+namespace Models;
 
-class Model
+use entity\Produits;
+use Database;
+
+abstract class Model
 {
-
+    
     protected $pdo;
+    protected $table;
 
     public function __construct()
     {
@@ -14,37 +19,22 @@ class Model
 
     public function findAll()
     {
-        $query = $this->pdo->prepare("SELECT nom, prix, rating, imageid FROM produits.id WHERE");
+        $query = $this->pdo->prepare("SELECT * FROM {$this->table}");
 
         $query->execute();
-        return $query->fetchAll();
+        $allProduits = $query->fetchAll();
+        return  $allProduits;
+
     }
 
-    public function find(int $id)
+
+    public function findByBanniere(int $id)
     {
-        $query = $this->pdo->prepare("SELECT produits.nom, produits.description, produits.prix, produits.imageId, produits.contenances, produits.rating FROM `produits` WHERE genreId = $id");
-        $query->execute();
-        $result = $query->fetch(); 
+        $query = $this->pdo->prepare("SELECT * FROM banniere WHERE banniere = :id");
+        $query->execute([':id '=> $id]);
+        $banniere = $query->fetchAll();
+        return $banniere;
     }
+    
 
-    public function findByGenre(int $id)
-    {
-        $query = $this->pdo->prepare("SELECT produits.nom, produits.prix, produits.imageId, produits.rating FROM `produits` INNER JOIN genres ON genres.id = produits.genreId WHERE genreId = $id");
-        $query->execute();
-        $result = $query->fetchAll();
-    }
-
-    public function findByCategorie(int $id)
-    {
-        $query = $this->pdo->prepare("SELECT produits.nom, produits.prix, produits.imageId, produits.rating FROM `produits` INNER JOIN categorie ON categorie.id = produits.categorieId WHERE categorieId = $id");
-        $query->execute();
-        $result = $query->fetchAll();
-    }
-
-    public function findByBanniere()
-    {
-        $query = $this->pdo->prepare("SELECT * FROM banniere WHERE banniere = $id");
-        $query->execute();
-        return $query->fetchAll();
-    }
 }

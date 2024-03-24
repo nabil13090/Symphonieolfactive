@@ -6,9 +6,10 @@
 class Database
 {
 
-    private static $instance = null;
+    private static $instance;
 
 
+    
 
     public static function getPdo(): PDO 
 {

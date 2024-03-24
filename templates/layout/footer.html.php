@@ -44,10 +44,13 @@
            EXPLORER SYMPHONIE
           </h6>
           <p>
-            <a href="#!" class="text-reset text-decoration-none ">Paiment sécurisé</a>
+            <a href="/monespace.php" class="text-reset text-decoration-none ">Paiment sécurisé</a>
           </p>
           <p>
-            <a href="#!" class="text-reset text-decoration-none">Contact</a>
+            <a href="/contact.php" class="text-reset text-decoration-none">Contact</a>
+          </p>
+          <p>
+            <a href="/politiquedonnées.php" class="text-reset text-decoration-none">Politique des données</a>
           </p>
           <div class="d-flex">
             <i class="bi bi-instagram mx-1 "></i>

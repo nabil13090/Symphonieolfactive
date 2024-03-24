@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Accueil</title>
-</head>
 <body>
     <div class="top">  
         <span class="txt me-4">Symphonie olfactive Aix en Provence</span>
@@ -56,10 +44,9 @@
         </nav>
         <header>
             <picture>
-                <img class="w-100" height="450px"src="assets/background/accueil2.jpg" alt="">
+                <img class="w-100" height="450px"src="<?= $img ?>" alt="">
             </picture>
             <div class="texttop">            
-                <p class="display-2 "><strong>1 PARFUM HOMME =</strong></p>
-                <P class="display-2 "><strong>1 PARFUM ENFANT OFFERT</P>
+                <p class="display-2 "><strong><?= $titre ?></strong></p>
             </div>
         </header>
