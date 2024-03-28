@@ -10,10 +10,16 @@ class Renderer
         extract($data);
 
         ob_start();
-        require('templates/' .  $view . '.html.php');
+        if($view == "index.php"){
+            require($view);
+        }else {
+            require('templates/' .  $view);
+        }
+       
+        
         $pageContent = ob_get_clean();
 
-        require('templates/layout/header.html.php');
+        require('templates/layout/layout.html.php');
     }
 
 

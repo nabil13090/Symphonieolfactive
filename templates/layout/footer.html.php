@@ -1,3 +1,9 @@
+<?php
+require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
+use Models\Produit;
+$type = new Produit();
+$genre = $type->findGenre();
+?>
 <footer class="pt-3">
   <!-- Section: Links  -->
   <section class="text-center text-lg-start text-muted mt-3 ">
@@ -23,16 +29,13 @@
             FRAGRANCES
           </h6>
           <p>
-            <a href="#!" class="text-reset text-decoration-none">Hommes</a>
+            <a href="/hommes.php" class="text-reset text-decoration-none">Hommes</a>
           </p>
           <p>
-            <a href="#!" class="text-reset text-decoration-none">Femmes</a>
+            <a href="/femmes.php" class="text-reset text-decoration-none">Femmes</a>
           </p>
           <p>
-            <a href="#!" class="text-reset text-decoration-none">Enfants</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset text-decoration-none">Categories</a>
+            <a href="/enfants.php" class="text-reset text-decoration-none">Enfants</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -41,10 +44,10 @@
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-           EXPLORER SYMPHONIE
+            EXPLORER SYMPHONIE
           </h6>
           <p>
-            <a href="/monespace.php" class="text-reset text-decoration-none ">Paiment sécurisé</a>
+            <a href="/panier.php" class="text-reset text-decoration-none ">Paiment sécurisé</a>
           </p>
           <p>
             <a href="/contact.php" class="text-reset text-decoration-none">Contact</a>
@@ -57,8 +60,8 @@
             <i class="bi bi-facebook mx-1 "></i>
             <i class="bi bi-snapchat mx-1"></i>
             <i class="bi bi-twitter-x mx-1"></i>
-        </div>
-          
+          </div>
+
 
 
         </div>
@@ -87,4 +90,5 @@
 </footer>
 <!-- Footer -->
 </body>
+
 </html>

@@ -2,14 +2,14 @@
 
 namespace Controllers;
 
-use entity\Produits;
+
 use Http;
 use Renderer;
 
 
 class Produit extends Controller
 {
-    protected $modelName = \Models\Produits::class;
+    protected $modelName = \Models\Produit::class;
 
     public function  index()
     {

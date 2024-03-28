@@ -5,15 +5,11 @@ namespace Controllers;
 
 use Renderer;
 use Http;
-use entity\Produits;
-
-
-
 
 
 class Produit extends Controller
 {
-    protected $modelName = \Models\Produits::class;
+    protected $modelName = \Models\Produit::class;
 
     public function admin()
     {

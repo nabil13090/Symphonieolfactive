@@ -1,3 +1,8 @@
+*{
+    font-family: Baskerville Old Face;
+}
+
+
 body{
     font-family: Baskerville Old Face;
     color: rgb(2, 2, 100);
@@ -25,6 +30,7 @@ body{
     align-items: center;
     overflow: hidden;
 }
+
 
 header{
     position: relative;
@@ -56,6 +62,12 @@ main .btn{
     display: flex;
 }
 
+.text-center .mt-5{
+    background-color: rgb(2, 2, 100);
+
+} 
+
+
 
 footer{
     background-color: rgb(2, 2, 100) !important;
@@ -70,7 +82,7 @@ footer{
     font-size: calc(9px + 4vw);
 }
 
-main section h1{
+main section h1 {
     font-family: Baskerville Old Face;
 }
 
@@ -78,4 +90,18 @@ main section h1{
 
 section .avs{
     background-color: rgb(2, 2, 100) !important;
+}
+
+.title{
+    background-color: rgb(2, 2, 100) !important;
+}
+
+.title h2{
+    font-family: Baskerville Old Face;
+    color: azure;
+}
+.container h3{
+
+    font-family: Baskerville Old Face;
+
 }

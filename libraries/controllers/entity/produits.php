@@ -3,7 +3,7 @@
 
 use Database;
 
-class Produits 
+class Produits
 {
 
     private $id;

@@ -6,6 +6,7 @@
         <div class="container py-5 mb-5 ">
             <div class="row">
                 <aside class="col-12 col-md-4">
+                <!-- <img src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=jhfjhfj" alt="avatar"/> -->
                     <section>
                         <form>
                             <div class="mb-3">
@@ -120,6 +121,7 @@
                 </section>
             </div>
         </div>
+        <?php require_once __DIR__ . "/templates/produits/cardsAvis.php"; ?>
 
     <?php 
 $img = "assets/background/monespace.jpg";

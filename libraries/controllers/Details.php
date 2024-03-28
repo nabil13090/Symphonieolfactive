@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-use entity\Produits;
+
 use Http;
 use Renderer;
 

@@ -1,18 +1,22 @@
-<?php ob_start() ?>
+<?php
+ob_start(); ?>
+<section class="text-center pt-4 ">
+    <h1>SYMPHONIE OLFACTIVE</h1>
+    <div class="mt-5">
+        <h3 class="text-white">SELECTION PROMOTION</h3>
+    </div>
+    <div class="d-flex justify-content-center ">
+        <?php require_once __DIR__ . "/templates/produits/carousel.php";
+        ?>
+    </div>
 
-
-     <section class="text-center pt-4 ">
-            <h1>SYMPHONIE OLFACTIVE</h1>
-            <div class="mb-3">
-                <h3>SELECTION PROMOTION</h3>
-            </div>
-        </section>
- 
-
-<?php 
+</section>
+<?php require_once __DIR__ . "/templates/produits/cardsAvis.php";
+?>
+<?php
 $img = "assets/background/accueil2.jpg";
 $titre = "BIENVENUE";
-$content = ob_get_clean(); 
+$content = ob_get_clean();
 ?>
-
-<?php require "template.php"; ?>
+<?php require "template.php";
+?>
