@@ -5,6 +5,7 @@ use Models\Produit;
 
 $parfums = new Produit();
 $parfumGenre = $parfums->findByCategorie(1);
+
 ?>
 <section class="pt-2 pb-2 w-50">
     <div class="container">
@@ -27,7 +28,8 @@ $parfumGenre = $parfums->findByCategorie(1);
                                     <img class="img-fluid" alt="100%x280" src="../../<?= $value['url'] ?>">
                                     <div class="card-body">
                                         <h4 class="card-title"><?= $value['nom'] ?></h4>
-                                        <p class="card-text"><?= $value['prix'] ?>  €</p>
+                                        <div class="ratings d-flex justify-content-center  mx-auto mb-2 ">Note : &nbsp; <?php $parfums->getStar($value['rating']); ?></div>
+                                        <p class="card-text"><?= $value['prix'] ?>&nbsp;€</p>
                                     </div>
                                 </div>
                             </div>

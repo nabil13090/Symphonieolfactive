@@ -25,7 +25,7 @@ class Produit extends Model
 
     public function findProduitsByGenre(int $id)
     {
-        $query = $this->pdo->prepare("SELECT p.id, p.nom, p.description, p.prix, i.url, p.genreId FROM `produits` p INNER JOIN image i ON p.imageId = i.id WHERE p.genreId = :id");
+        $query = $this->pdo->prepare("SELECT p.id, p.nom, p.description, p.prix, p.rating, i.url, p.genreId FROM `produits` p INNER JOIN image i ON p.imageId = i.id WHERE p.genreId = :id");
         $query->execute([':id'=> $id]);
         $byGenre = $query->fetchAll();
         return $byGenre;
@@ -54,13 +54,13 @@ class Produit extends Model
         $ratingInt = explode(".", $starRating);
     
         for ($i=0; $i < $ratingInt[0] ; $i++) {
-            echo '<div class="bi-star-fill text-warning "></div>';
+            echo '<div class="bi-star-fill text-black "></div>';
         }
         if ($ratingInt[1] != 0) {
-            echo '<div class="bi-star-half text-warning"></div>';
+            echo '<div class="bi-star-half text-black"></div>';
         }
         if (5 - $starRating >= 1) {
-            echo '<div class="bi-star text-warning"></div>';
+            echo '<div class="bi-star text-black"></div>';
         }
     }
 

@@ -12,16 +12,16 @@ class HomeController extends Controller
     
     
 
-    // public function __construct()
-    // {
-    //     $this->modelProduits =  new \Models\Produit();
-    // }
+    public function __construct()
+    {
+        $this->modelProduits =  new \Models\Produit();
+    }
     
 
-    // public function index()
-    // {
-    //     $produitsCategorie = $this->modelProduits->findByCategorie();
-    //     $avis = $this->modelProduits->findAvis();
-    //     Renderer::render('index.php', $produitsCategorie);
-    // }
+    public function index()
+    {
+        $produitsCategorie = $this->modelProduits->findByCategorie();
+        $avis = $this->modelProduits->findAvis();
+        Renderer::render('index.php', $produitsCategorie);
+    }
 }

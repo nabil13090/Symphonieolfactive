@@ -169,7 +169,7 @@
 
                                     <button type="button" class="btn btn-primary btn-block btn-lg">
                                         <div class="d-flex justify-content-between">
-                                            <span>Checkout</span>
+                                            <span>Payer</span>
                                             <span>176 €</span>
                                         </div>
                                     </button>
