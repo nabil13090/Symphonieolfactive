@@ -12,9 +12,9 @@ $parfum = $parfums->findAll();
 
 $parfum = $value ?>
 <div class="text-center" style="max-width: 900px; max-height:600px;">
-    <div class=" row no-gutters bg-light position-relative">
-        <div class="col-md-6 mb-md-0 p-md-4">
-            <img src="../../<?= $value['url'] ?>" class="w-100" alt="photo de <?= $value['nom'] ?>">
+    <div class="card bg-light d-flex flex-row ">
+        <div class="col-md-6 mb-md-0 p-md-4 m-auto">
+            <img src="../../<?= $value['url'] ?>" class="w-100" style="min-width: 400px; min-height:400px;" alt="photo de <?= $value['nom'] ?>">
         </div>
         <div class="col-md-6 position-static p-4 pl-md-0 ">
             <h5 class="mt-4">Nos Fragrances</h5>

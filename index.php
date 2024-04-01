@@ -11,12 +11,15 @@ ob_start(); ?>
         ?>
     </div>
     <div class="d-flex justify-content-center">
-        <?php require_once __DIR__ . "/templates/produits/parfums.html.php";?>
+        <?php require_once __DIR__ . "/templates/produits/parfums.html.php"; ?>
     </div>
 
 </section>
-<?php require_once __DIR__ . "/templates/produits/cardsAvis.php";
-?>
+<div>
+    <?php require_once __DIR__ . "/templates/produits/cardsAvis.php";
+        ?>
+        </div>
+
 <?php
 $img = "assets/background/accueil2.jpg";
 $titre = "LE MONDE OLFACTIF";
