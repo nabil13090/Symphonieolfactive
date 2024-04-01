@@ -11,15 +11,10 @@ $genre = $type->findGenre();
     <div class="top">
         <span class="txt me-4">Symphonie olfactive Aix en Provence</span>
     </div>
+    <!-- <div class="d-flex justify-content-end "><img src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=jhfjhfj" height="25px" alt="avatar" /></div> -->
     <div class="d-flex justify-content-center pt-2">
         <img class="ms-3" height="100px" src="assets/logo/logo.png" alt="">
         <a class="pi mx-5 text-decoration-none display-6" href="/index.php">Symphonie Olfactive</a>
-        <!-- <div class="w-25">       
-        <form class="d-flex py-3 justify-content-center" role="search">
-            <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
-                <button class="btn btn-outline-primary bi bi-search" type="submit"></button>
-            </form>
-            </div> -->
     </div>
     <nav class="navbar navbar-expand-lg d-flex justify-content-center">
         <div>
