@@ -2,26 +2,39 @@
 
 namespace Controllers;
 
+use Models\Detail;
 use Http;
 use Renderer;
 
 
 class HomeController extends Controller
 {
-    protected $modelProduits;
+    protected $carouselProduits;
+    protected $avisProduits;
     
     
 
     public function __construct()
     {
-        $this->modelProduits =  new \Models\Produit();
+        $this->carouselProduits =  new \Models\Produit();
+        $this->carouselProduits->findByCategorie();
+        $this->avisProduits = new \Models\Produit();
+        $this->avisProduits->findAvis();
     }
+
     
 
-    public function index()
+    public function caroussel()
     {
-        $produitsCategorie = $this->modelProduits->findByCategorie();
-        $avis = $this->modelProduits->findAvis();
-        Renderer::render('index.php', $produitsCategorie);
+        $carouselProduits =  $this->carouselProduits;
+        $parfumGenre = $this->carouselProduits->findByCategorie(1);
+       require_once dirname(__DIR__, 2) . "/templates/produits/index.php";
+    }
+
+    public function avis()
+    {
+        $avisProduits =  $this->avisProduits;
+        $avis = $this->avisProduits->findAvis();
+        require_once dirname(__DIR__, 2) . "/templates/produits/index.php";
     }
 }

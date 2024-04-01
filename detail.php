@@ -8,7 +8,16 @@ ob_start(); ?>
     </div>
 </section>
 <?php require_once __DIR__ . "/templates/produits/detail.html.php"; ?>
+<div class="mt-3">
+    <h3 class="text-center">SELECTION PROMOTION</h3>
+</div>
+<div class="d-flex justify-content-center">
+    <?php require_once __DIR__ . "/templates/produits/carousel.php";
+    ?>
+</div>
+</div>
 <?php
+
 $img = "assets/background/detail.jpg";
 $titre = "DÉTAIL DE PRODUIT";
 $content = ob_get_clean();

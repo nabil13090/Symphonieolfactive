@@ -28,7 +28,6 @@ $parfumGenre = $parfums->findByCategorie(1);
                                     <img class="img-fluid" alt="100%x280" src="../../<?= $value['url'] ?>">
                                     <div class="card-body">
                                         <h4 class="card-title"><?= $value['nom'] ?></h4>
-                                        <div class="ratings d-flex justify-content-center  mx-auto mb-2 ">Note : &nbsp; <?php $parfums->getStar($value['rating']); ?></div>
                                         <p class="card-text"><?= $value['prix'] ?>&nbsp;€</p>
                                     </div>
                                 </div>

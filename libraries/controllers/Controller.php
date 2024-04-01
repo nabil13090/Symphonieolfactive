@@ -4,8 +4,9 @@ namespace Controllers;
 
 abstract class Controller
 {
-    protected  $model;
+    protected  $modelDetail;
     protected  $modelName;
+    protected  $model;
 
     public function  __construct() 
     {
