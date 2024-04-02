@@ -1,6 +1,4 @@
 <?php
-
-
 $domain  = '/';
 $indexPage = $domain;
 $contactPage = $domain .  'contact.php';
@@ -23,14 +21,11 @@ $politiqueName="POLITIQUE DES  DONNÉES";
 
 $currentUrl = $_SERVER['SCRIPT_NAME'];
 
-
 function activeNavlink ($page, $url)  {
     if (strpos($page, $url)!== FALSE){
       echo 'active';
     } 
     }
-     
-    
     if (strpos($indexPage, $current_url) !== FALSE || strpos ($indexPage . 'index.php' , $current_url) !== FALSE):
       $title = $indexName;
     elseif (strpos($contactPage, $current_url) !== FALSE):
@@ -47,9 +42,6 @@ function activeNavlink ($page, $url)  {
             $title = $politiqueName;
     endif;
 
-
-
-?>
 
 
 

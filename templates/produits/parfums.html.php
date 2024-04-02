@@ -11,17 +11,31 @@ $parfums = new Produit();
 $parfum = $parfums->findAll();
 
 $parfum = $value ?>
-<div class="text-center" style="max-width: 900px; max-height:600px;">
-    <div class="card bg-light d-flex flex-row ">
-        <div class="col-md-6 mb-md-0 p-md-4 m-auto">
-            <img src="../../<?= $value['url'] ?>" class="w-100" style="min-width: 400px; min-height:400px;" alt="photo de <?= $value['nom'] ?>">
-        </div>
-        <div class="col-md-6 position-static p-4 pl-md-0 ">
-            <h5 class="mt-4">Nos Fragrances</h5>
-            <p class="mt-4">Explorez notre collection exclusive de parfums de marques renommées telles que <strong>Symphonie Olfactive</strong>, où chaque flacon incarne
-                l'essence même du raffinement et de l'élégance. Que vous recherchiez un parfum frais pour les journées ensoleillées,
-                une fragrance envoûtante pour les soirées romantiques,
-                ou un cadeau parfait pour un être cher, vous trouverez votre précieux trésor olfactif parmi nos rayons virtuels.</p>
+<div class="container">
+    <div class="card bg-light">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="../../<?= $value['url'] ?>" class="w-100" style="min-width: 400px; min-height:400px;" alt="photo de <?= $value['nom'] ?>">
+            </div>
+            <div class="col-md-6 p-4">
+                <h5 class="my-4 display-6 ">Nos Fragrances</h5>
+                <p class="pt-4-4">Explorez notre collection exclusive de parfums de marques renommées telles que <strong>Symphonie Olfactive</strong>, où chaque flacon incarne
+                    l'essence même du raffinement et de l'élégance. Que vous recherchiez un parfum frais pour les journées ensoleillées,
+                    une fragrance envoûtante pour les soirées romantiques,
+                    ou un cadeau parfait pour un être cher, vous trouverez votre précieux trésor olfactif parmi nos rayons virtuels.
+                    “<strong>Symphonie Olfactive</strong>, la fragrance qui unit. Notre marque de parfum crée des liens indéfectibles au sein de la famille.
+                    Chaque parfum est conçu avec amour et soin, capturant l’essence de la joie familiale. Des notes douces pour maman, des touches robustes pour papa,
+                    et des arômes joyeux pour les enfants. <strong>Symphonie Olfactive</strong>, le parfum de l’amour familial.”
+                    <strong>Symphonie Olfactive</strong>, le parfum qui célèbre la famille. Nous créons des parfums qui évoquent les moments précieux passés ensemble.
+                    Des notes florales pour la mère, des arômes boisés pour le père, et des senteurs fruitées
+                    pour les enfants. <strong>Symphonie Olfactive</strong>, l’essence de la vie en famille.
+                    <strong>Symphonie Olfactive</strong>, le parfum qui raconte votre histoire. Nos parfums sont comme des chapitres d’un livre,
+                    chaque note raconte une partie de l’histoire de votre famille. Des notes épicées pour le père, des arômes
+                    floraux pour la mère,
+                    et des senteurs sucrées pour les enfants. <strong>Symphonie Olfactive</strong>, le parfum de votre histoire.
+                </p>
+                <button type="button" class="btn btn-primary btn-lg btn-block mt-5 "><a class=" text-decoration-none text-white  " href="/detail.php?id=<?= $value['id'] ?>">FRAGRANCES</a></button>
+            </div>
         </div>
     </div>
 </div>

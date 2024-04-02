@@ -4,7 +4,7 @@
 <section class="text-center pt-4">
     <h1>SYMPHONIE OLFACTIVE</h1>
 </section>
-<div class="container py-5 mb-5 ">
+<div class="container py-5 mb-5">
     <div class="row">
         <?php require_once __DIR__ . "/templates/fomulaires/connexion.form.php"; ?>
     </div>

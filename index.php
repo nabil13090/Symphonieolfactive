@@ -1,24 +1,25 @@
 <?php
 session_start();
 ob_start(); ?>
-<section class="text-center pt-4 ">
+<section class="text-center py-4">
     <h1>SYMPHONIE OLFACTIVE</h1>
     <div class="mt-5">
         <h3 class="text-white">SELECTION PROMOTION</h3>
     </div>
+
     <div class="d-flex justify-content-center ">
         <?php require_once __DIR__ . "/templates/produits/carousel.php";
         ?>
     </div>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center ">
         <?php require_once __DIR__ . "/templates/produits/parfums.html.php"; ?>
     </div>
 
 </section>
 <div>
     <?php require_once __DIR__ . "/templates/produits/cardsAvis.php";
-        ?>
-        </div>
+    ?>
+</div>
 
 <?php
 $img = "assets/background/accueil2.jpg";

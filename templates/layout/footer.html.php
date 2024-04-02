@@ -1,6 +1,8 @@
 <?php
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
+
 use Models\Produit;
+
 $type = new Produit();
 $genre = $type->findGenre();
 ?>
@@ -28,15 +30,11 @@ $genre = $type->findGenre();
           <h6 class="text-uppercase fw-bold mb-4">
             FRAGRANCES
           </h6>
-          <p>
-            <a href="/hommes.php" class="text-reset text-decoration-none">Hommes</a>
-          </p>
-          <p>
-            <a href="/femmes.php" class="text-reset text-decoration-none">Femmes</a>
-          </p>
-          <p>
-            <a href="/enfants.php" class="text-reset text-decoration-none">Enfants</a>
-          </p>
+          <?php foreach ($genre as $value) { ?>
+            <p>
+              <a class="dropdown-item" href="/<?= $value['nom'] ?>.php?id=<?= $value['id'] ?>"><?= $value['nom'] ?></a>
+            </p>
+          <?php } ?>
         </div>
         <!-- Grid column -->
 

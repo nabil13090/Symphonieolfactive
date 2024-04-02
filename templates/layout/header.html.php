@@ -1,17 +1,20 @@
 <?php
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
-
 use Models\Produit;
-
 $type = new Produit();
 $genre = $type->findGenre();
 ?>
-
 <body>
     <div class="top">
         <span class="txt me-4">Symphonie olfactive Aix en Provence</span>
     </div>
-    <!-- <div class="d-flex justify-content-end "><img src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=jhfjhfj" height="25px" alt="avatar" /></div> -->
+    <div class="d-flex justify-content-end gap-5">
+        <?php if (!empty($_SESSION["id"])) : ?>
+            <h4 class="mt-2">Bienvenue <strong><?php echo ucfirst($_SESSION["nom"]) ?>
+                </strong></h4><?php endif; ?>
+        <div><a href="plustard.php" class=" nav-link me-3 align-items-center mt-2 bi bi-box-arrow-left"></a>
+        </div>
+    </div>
     <div class="d-flex justify-content-center pt-2">
         <img class="ms-3" height="100px" src="assets/logo/logo.png" alt="">
         <a class="pi mx-5 text-decoration-none display-6" href="/index.php">Symphonie Olfactive</a>
