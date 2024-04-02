@@ -7,7 +7,7 @@ ob_start(); ?>
         <h3 class="text-white">SELECTION PROMOTION</h3>
     </div>
 
-    <div class="d-flex justify-content-center ">
+    <div class="d-flex justify-content-center mb-4">
         <?php require_once __DIR__ . "/templates/produits/carousel.php";
         ?>
     </div>

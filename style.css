@@ -105,3 +105,26 @@ section .avs{
     font-family: Baskerville Old Face;
 
 }
+.chargement{
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #2c3e50;
+    border-bottom: 10px solid #e74c3c;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: spin 3s linear infinite;
+    -o-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+    margin: auto;
+    
+}
+
+.val{
+    top: 117%;
+    left: 42%;
+}
+
+.vis{
+    top: 84%;
+    left: 38%;
+}

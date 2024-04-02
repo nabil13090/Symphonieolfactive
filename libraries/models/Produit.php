@@ -4,6 +4,7 @@ namespace Models;
 class Produit extends Model
 {
     protected $table = 'produits';
+    
 
     public function findAll()
     {
@@ -62,15 +63,13 @@ class Produit extends Model
         if (5 - $starRating >= 1) {
             echo '<div class="bi-star text-black"></div>';
         }
+
+
+        
     }
 
-    // public function allGenre()
-    // {
-    //     $query = $this->pdo->prepare("SELECT * FROM genres");
-    //     $query->execute();
-    //     $byGenre =  $query->fetchAll();
-    //     return  $byGenre;
-    // }
+
+
 }
 
 

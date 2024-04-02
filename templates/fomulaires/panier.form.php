@@ -3,39 +3,21 @@ session_start();
 
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
 
-use Models\Detail;
-use Models\Produit;
 
-$rating = new Produit;
+use Models\Detail;
+// use Controllers\PanierController;
+
+
 $parfumDetail = new Detail();
+
 
 // Initialise le panier s'il n'existe pas déjà
 if (!isset($_SESSION['panier'])) {
     $_SESSION['panier'] = array();
 }
-
 // Vérifie si un produit est ajouté au panier
 if (isset($_GET['id'])) {
-    $currentid = $_GET['id'];
-    $cart = $parfumDetail->find($currentid);
-    if (empty($cart)) {
-        die("Ce produit n'existe pas");
-    }
-
-    // Ajoute le produit au panier
-    if (!isset($_SESSION['panier'][$currentid])) {
-        $_SESSION['panier'][$currentid] = array(
-            'id' => $cart['id'],
-            'nom' => $cart['nom'],
-            'contenances' => $cart['contenances'],
-            'quantite' => 1, // Initialise la quantité à 1
-            'prix' => $cart['prix'],
-            'image' => $cart['url']
-        );
-    } else {
-        // Incrémente la quantité si le produit est déjà dans le panier
-        $_SESSION['panier'][$currentid]['quantite']++;
-    }
+    $parfumDetail->addProductPanier(intval($_GET["id"]));
 } else {
     // Si l'identifiant n'est pas fourni, définir un identifiant par défaut
     $defaultId = 1; // ID de votre produit par défaut
@@ -45,6 +27,7 @@ if (isset($_GET['id'])) {
         die("Le produit par défaut n'existe pas");
     }
 }
+
 
 ?>
 
@@ -64,12 +47,13 @@ if (isset($_GET['id'])) {
             foreach ($_SESSION['panier'] as $id => $item) {
                 $prix_total_produit = $item['quantite'] * $item['prix'];
                 $total += $prix_total_produit;
+                
 
             ?>
                 <tr>
                     <th scope="row">
                         <div class="d-flex align-items-center">
-                            <img src="../../<?= $cart['url'] ?>" class="img-fluid rounded-3" style="width: 120px;" alt="Book">
+                            <img src="../../<?= $item['image'] ?>" class="img-fluid rounded-3" style="width: 120px;" alt="Book">
                             <div class="flex-column md-4">
                                 <p class="mb-2"><?= $item['nom'] ?></p>
                                 <p class="mb-0">Symphonie Olfactive</p>
@@ -107,9 +91,9 @@ if (isset($_GET['id'])) {
     <div class="card-body p-4 ">
         <div class="row d-flex justify-content-end ">
             <div class="col-lg-4 col-xl-3">
-                <div class="d-flex justify-content-between" >
-                    <p class="mb-2">Sous-total</p>
-                    <p class="mb-2"><?= $total ?> €</p>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-2">Total HT</p>
+                    <p class="mb-2"><?= ($total - ($total * 0.18))?> €</p>
                 </div>
 
                 <div class="d-flex justify-content-between">
@@ -119,14 +103,14 @@ if (isset($_GET['id'])) {
 
                 <hr class="my-4">
 
-                <div class="d-flex justify-content-between mb-4" >
-                    <p class="mb-2">Total (sans Taxe)</p>
+                <div class="d-flex justify-content-between mb-4">
+                    <p class="mb-2">Total TTC</p>
                     <p class="mb-2"><?= $total ?> €</p>
                 </div>
 
                 <button type="button" class="btn btn-primary btn-block btn-lg">
                     <div class="d-flex justify-content-between">
-                        <span>Payer</span>
+                        <a class=" text-decoration-none text-white " href="/validationPaiment.php"><span>Payer</span></a>
                         <span><?= $total ?> €</span>
                     </div>
                 </button>

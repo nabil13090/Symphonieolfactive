@@ -4,7 +4,7 @@ namespace Controllers;
 
 abstract class Controller
 {
-    protected  $modelDetail;
+
     protected  $modelName;
     protected  $model;
 
