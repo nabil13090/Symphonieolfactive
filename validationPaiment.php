@@ -5,11 +5,12 @@
     <div class="chargement position-relative mt-4" style="min-width: 600px; min-height:600px;">
     </div>
     <img src="/assets/images/visa.png" alt="visa" class="vis position-absolute " style="min-width: 150px; min-height:150px;">
-    <h4 class=" val position-absolute text-danger "><strong>TRANSACTION EN COURS.......</br> AVEC VOTRE BANQUE</strong></h4>
+    <h4 class=" val position-absolute text-danger "><strong> TRANSACTION EN COURS.......</br> AVEC VOTRE BANQUE</strong></h4>
 </section>
 
 
 <?php
+$title = "Transaction";
 $img = "assets/background/panier.jpg";
 $titre = "";
 $content = ob_get_clean();

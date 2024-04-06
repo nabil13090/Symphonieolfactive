@@ -22,6 +22,7 @@ ob_start(); ?>
 </div>
 
 <?php
+$title = "Accueil";
 $img = "assets/background/accueil2.jpg";
 $titre = "LE MONDE OLFACTIF";
 $content = ob_get_clean();

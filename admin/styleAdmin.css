@@ -1,21 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style:  none;
+    list-style: none;
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif;
 }
 
-body{
+body {
     background: #bbb3f2 !important;
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     position: relative;
 }
 
-.wrapper .sidebar{
+.wrapper .sidebar {
     position: fixed;
     width: 200px;
     height: 100%;
@@ -23,50 +24,53 @@ body{
     padding: 30px 0;
 
 }
-.wrapper .sidebar h2{
+
+.wrapper .sidebar h2 {
     color: #fff;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.wrapper .sidebar ul li{
+.wrapper .sidebar ul li {
     padding: 15px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    border-top: 1px solid rgba(225,225, 225, 0.05);
+    border-top: 1px solid rgba(225, 225, 225, 0.05);
 }
 
-.wrapper .sidebar ul li a{
+.wrapper .sidebar ul li a {
     color: #bdb8d7;
     display: block;
 
 }
 
-.wrapper .sidebar ul li a .nav-link{
+.wrapper .sidebar ul li a .nav-link {
     width: 25px;
 }
 
-.wrapper .sidebar ul li:hover{
+.wrapper .sidebar ul li:hover {
 
     background: #594f8d;
 }
-.wrapper .sidebar ul li:hover a{
+
+.wrapper .sidebar ul li:hover a {
     color: #fff;
 }
 
-.card{
-    position:absolute;
-    left: 17%;
-    background-color: #bdb8d7 !important;
-}
 
-.card .card-header{
+
+.card .card-header {
     background-color: #594f8d;
 }
 
-.table{
+.table {
     position: absolute;
     left: 17%;
 }
 
-
+.intro {
+    position: absolute;
+    width: 77%;
+    bottom: 95%;
+    top: 11%;
+}

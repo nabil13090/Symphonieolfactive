@@ -53,12 +53,7 @@ class Produits extends Model
         return  $insert;
     }
 
-    public function  delete(int $id)
-    {
-        $pdo = Database::getPdo();
-        $query = $pdo->prepare("DELETE FORM produits WHERE id = :id");
-        $query->execute(['id' => $id]);
-    }
+  
 
 
 }

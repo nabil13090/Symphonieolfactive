@@ -14,7 +14,7 @@ ob_start(); ?>
 </div>
 <?php require_once __DIR__ . "/templates/produits/cardsAvis.php"; ?>
 <?php
-
+$title = "Hommes";
 $img = "assets/background/hommes.jpg";
 $titre = "FRAGRANCES HOMMES";
 $content = ob_get_clean();

@@ -27,7 +27,7 @@
                 </p>
                 <h3 class="mt-4 mb-1">Email</h3>
                 <address>
-                    <a href="mailto:contact@studiobiarritz.com" class="text-black text-decoration-none">Symphonie@olfactive.com</a><br>
+                    <a href="" class="text-black text-decoration-none">Symphonie@olfactive.com</a><br>
                     ou via ce formulaire
                 </address>
             </section>
@@ -43,6 +43,7 @@
 </div>
 <?php require_once __DIR__ . "/templates/produits/cardsAvis.php"; ?>
 <?php
+$title = "Creation Compte";
 $img = "assets/background/compte.jpg";
 $titre = "ESPACE CREATION";
 $content = ob_get_clean(); ?>

@@ -120,11 +120,13 @@ section .avs{
 }
 
 .val{
-    top: 117%;
-    left: 42%;
+    top: 155%;
+    left: 40%;
 }
 
 .vis{
-    top: 84%;
-    left: 38%;
+    top: 112%;
+    left: 35%;
+    /* width: 20vw; */
+    /* height: auto; */
 }

@@ -16,6 +16,7 @@
 </div>
 <?php require_once __DIR__ . "/templates/produits/cardsAvis.php"; ?>
 <?php
+$title = "Mon Espace";
 $img = "assets/background/monespace.jpg";
 $titre = "MON ESPACE";
 $content = ob_get_clean(); ?>

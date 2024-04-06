@@ -19,7 +19,8 @@
         </section>
  
 
-<?php 
+<?php
+$title = "Politique des données";
 $img = "assets/background/politiquedonnées.jpg";
 $titre = "POLITIQUE DES  DONNÉES";
 $content = ob_get_clean(); 

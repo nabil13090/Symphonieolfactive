@@ -4,7 +4,7 @@ namespace Models;
 
 class Users extends Model
 {
-    protected $table = 'produits';
+    protected $table = 'utilisateurs';
 
 
     function inscription($nom, $email, $mot_de_passe)
@@ -37,6 +37,55 @@ class Users extends Model
         } else {
             return false;
         }
+    }
+
+    function findUser($id)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM utilisateurs WHERE id = :id");
+        $query->execute([':id' => $id]);
+        $utilisateur = $query->fetch();
+        return $utilisateur;
+    }
+    
+    function findUserAll()
+    {
+        $query = $this->pdo->prepare("SELECT * FROM `utilisateurs`");
+        $query->execute();
+        $utilisateur = $query->fetchAll();
+        return $utilisateur;
+    }
+
+    function roleUser()
+    {
+        $query = $this->pdo->prepare("SELECT utilisateurs.role, utilisateurs.id FROM `utilisateurs`");
+        $query->execute();
+        $role = $query->fetchAll();
+        return $role;
+    }
+
+    public function  delete(int $id)
+    {
+        $query = $this->pdo->prepare("DELETE FROM utilisateurs WHERE id = :id");
+        $query->execute(['id' => $id]);
+        header('Location: comptes.php');
+    }
+
+    public function updateUser($id_utilisateur, $nouveau_nom, $nouvel_email, $nouveau_mot_de_passe)
+    {
+        // Préparation de la requête SQL
+        $query = $this->pdo->prepare('UPDATE utilisateurs SET nom = :nom_modifie, email = :email_modifie, mot_de_passe = :mot_de_passe_modifie WHERE id = :id_utilisateur');
+
+        // Liaison des valeurs
+        $query->bindParam(':nom_modifie', $nouveau_nom);
+        $query->bindParam(':email_modifie', $nouvel_email);
+        $query->bindParam(':mot_de_passe_modifie', $nouveau_mot_de_passe);
+        $query->bindParam(':id_utilisateur', $id_utilisateur);
+
+        // Exécution de la requête
+        $update = $query->execute();
+
+        // Retourne le résultat de la mise à jour (true ou false)
+        return $update;
     }
 
 }

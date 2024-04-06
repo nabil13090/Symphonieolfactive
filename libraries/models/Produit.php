@@ -49,6 +49,20 @@ class Produit extends Model
         return  $allAvis;
     }
 
+
+
+
+    public function findAdminProduits()
+    {
+        $query = $this->pdo->prepare("SELECT p.id, p.nom, p.prix, p.rating, g.nom as name, p.stock, p.contenances FROM `produits` p INNER JOIN genres g ON p.genreId = g.id");
+
+        $query->execute();
+        $parfum = $query->fetchAll();
+        return  $parfum; 
+    }
+
+
+
     function getStar ($rating) {
 
         $starRating = round($rating/2,1);
@@ -67,6 +81,53 @@ class Produit extends Model
 
         
     }
+
+
+    public function  delete(int $id)
+    {
+        $query = $this->pdo->prepare("DELETE FROM produits WHERE id = :id");
+        $query->execute(['id' => $id]);
+        header('Location: parfum.php');
+    }
+
+
+    public function insert($data)
+    {
+        $query = $this->pdo->prepare('INSERT INTO produits (nom, description, prix, contenances, rating, stock, created_at, genreId, imageId, categorieId) VALUES (:nom, :description, :prix, :contenances, :rating, :stock, :created_at, :genreId, :imageId, :categorieId)');
+
+        // Échapper les caractères spéciaux pour éviter les attaques par injection SQL
+        $nom = htmlspecialchars($data['nom']);
+        $description = htmlspecialchars($data['description']);
+
+        // Convertir les valeurs en types appropriés
+        $prix = floatval($data['prix']);
+        $contenances = intval($data['contenances']);
+        $rating = floatval($data['rating']);
+        $stock = intval($data['stock']);
+        $created_at = htmlspecialchars($data['created_at']);
+        $genreId = intval($data['genreId']);
+        $imageId = intval($data['imageId']);
+        $categorieId = intval($data['categorieId']);
+
+        // Exécution de la requête
+        $query->bindParam(':nom', $nom);
+        $query->bindParam(':description', $description);
+        $query->bindParam(':prix', $prix);
+        $query->bindParam(':contenances', $contenances);
+        $query->bindParam(':rating', $rating);
+        $query->bindParam(':stock', $stock);
+        $query->bindParam(':created_at', $created_at);
+        $query->bindParam(':genreId', $genreId);
+        $query->bindParam(':imageId', $imageId);
+        $query->bindParam(':categorieId', $categorieId);
+
+        $insert = $query->execute();
+        return $insert;
+    }
+
+ 
+
+
 
 
 

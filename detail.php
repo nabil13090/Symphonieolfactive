@@ -17,7 +17,7 @@ ob_start(); ?>
 </div>
 </div>
 <?php
-
+$title = "Detail";
 $img = "assets/background/detail.jpg";
 $titre = "DÉTAIL DE PRODUIT";
 $content = ob_get_clean();
