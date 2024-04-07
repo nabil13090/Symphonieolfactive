@@ -51,7 +51,7 @@ $genre = $type->findGenre();
     </nav>
     <header>
         <picture>
-            <img class="w-100" height="450px" src="<?= $img ?>" alt="">
+            <img class="w-100" height="600px" src="<?= $img ?>" alt="">
         </picture>
         <div class="texttop">
             <p class="display-2 "><strong><?= $titre ?></strong></p>

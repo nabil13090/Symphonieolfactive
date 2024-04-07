@@ -44,7 +44,7 @@ require_once __DIR__ . "/layout/header.admin.php";
                 <a class="btn btn-outline-primary mt-auto pe-3  " href="modifierCompte.php?id=<?= $value['id'] ?>"><i class="bi bi-arrow-up-circle text-primary "></i> MODIFIER</a>
               </td>
               <td>
-                <a class="btn btn-outline-danger mt-auto" href="supprimeCompte.php?id=<?= $value['id'] ?>"><i class="bi bi-x-circle text-danger "></i> SUPPRIMER</a>
+                <a class="btn btn-outline-danger mt-auto" href="supprimeCompte.php?id=<?= $value['id'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');"><i class="bi bi-x-circle text-danger "></i> SUPPRIMER</a>
               </td>
             </tr>
           <?php }  ?>

@@ -11,7 +11,7 @@ ob_start(); ?>
         <?php require_once __DIR__ . "/templates/produits/carousel.php";
         ?>
     </div>
-    <div class="d-flex justify-content-center ">
+    <div class="container">
         <?php require_once __DIR__ . "/templates/produits/parfums.html.php"; ?>
     </div>
 

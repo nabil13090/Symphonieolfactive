@@ -11,7 +11,7 @@
 
 <?php
 $title = "Transaction";
-$img = "assets/background/panier.jpg";
+$img = "assets/background/transaction.jpg";
 $titre = "";
 $content = ob_get_clean();
 ?>

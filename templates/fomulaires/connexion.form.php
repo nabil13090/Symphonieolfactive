@@ -7,31 +7,31 @@ use Models\Users;
 $connexion = new Users();
 
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST['email'];
-        $mot_de_passe = $_POST['mot_de_passe'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $mot_de_passe = $_POST['mot_de_passe'];
 
-        $utilisateur = $connexion->connexion($email, $mot_de_passe);
-        if ($utilisateur) {
-            $_SESSION['id'] = $utilisateur['id'];
-            $_SESSION['role'] = $utilisateur['role'];
-            $_SESSION['nom'] = $utilisateur['nom'];
+    $utilisateur = $connexion->connexion($email, $mot_de_passe);
+    if ($utilisateur) {
+        $_SESSION['id'] = $utilisateur['id'];
+        $_SESSION['role'] = $utilisateur['role'];
+        $_SESSION['nom'] = $utilisateur['nom'];
 
 
-            if ($_SESSION['role'] === 'admin') {
-                header('Location: admin/dashBord.php');
-            } else {
-                header('Location: index.php');
-            }
-            exit();
+        if ($_SESSION['role'] === 'admin') {
+            header('Location: admin/dashBord.php');
         } else {
-            $erreur = "Email ou mot de passe incorrect.";
+            header('Location: index.php');
         }
+        exit();
+    } else {
+        $erreur = "Email ou mot de passe incorrect.";
     }
-    if (isset($_SESSION['inscrit'])) {
-        $message = $_SESSION['inscrit'];
-        unset($_SESSION['inscrit']);
-    }
+}
+if (isset($_SESSION['inscrit'])) {
+    $message = $_SESSION['inscrit'];
+    unset($_SESSION['inscrit']);
+}
 ?>
 
 <div class="mb-3">
@@ -55,10 +55,10 @@ $connexion = new Users();
         <div class="mb-3">
             <div class="col-lg-7 mb-4">
                 <div class="form-floating">
-                    <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="mot_de_passe" placeholder="Votre mot de passe" name="mot_de_passe" required>
-                    <label for="lname" class="p-start-5">Mot de passe</label>
+                    <input type="password" class="form-control border border-black rounded-0 bg-lightgrey" id="mot_de_passe" placeholder="Votre mot de passe" name="mot_de_passe" required>
+                    <label for="password" class="p-start-5">Mot de passe</label>
                     <div class="invalid-feedback">
-                        Veuillez saisir votre nom.
+                        Veuillez saisir votre mot de passe.
                     </div>
                 </div>
             </div>
@@ -69,4 +69,4 @@ $connexion = new Users();
             <?php echo $erreur; ?>
         </div>
     <?php endif; ?>
-    </div>
+</div>

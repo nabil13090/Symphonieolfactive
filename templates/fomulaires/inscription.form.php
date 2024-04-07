@@ -60,10 +60,10 @@
 
             <div class="col-12 mb-4">
                 <div class="form-floating">
-                    <input type="text" class="form-control border border-black  rounded-0 bg-lightgrey" id="subject" placeholder="Sujet" name="mot_de_passe" required>
-                    <label for="subject">Mot de passe</label>
+                    <input type="password" class="form-control border border-black  rounded-0 bg-lightgrey" id="mot_de_passe" placeholder="mot_de_passe" name="mot_de_passe" required>
+                    <label for="mot_de_passe">Mot de passe</label>
                     <div class="invalid-feedback">
-                        Veuillez saisir un mot de passe dans le champ de texte
+                        Veuillez saisir un mot de passe
                     </div>
                 </div>
             </div>
