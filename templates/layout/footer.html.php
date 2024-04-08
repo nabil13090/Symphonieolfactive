@@ -59,9 +59,6 @@ $genre = $type->findGenre();
             <i class="bi bi-snapchat mx-1"></i>
             <i class="bi bi-twitter-x mx-1"></i>
           </div>
-
-
-
         </div>
         <!-- Grid column -->
 
@@ -82,7 +79,7 @@ $genre = $type->findGenre();
 
   <!-- Copyright -->
   <div class="text-center p-4">
-    © 2024 Copyright: Symphonie Olfactive
+    <?= date('Y'); ?> © Copyright : Symphonie Olfactive
   </div>
   <!-- Copyright -->
 </footer>
