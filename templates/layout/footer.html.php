@@ -32,7 +32,7 @@ $genre = $type->findGenre();
           </h6>
           <?php foreach ($genre as $value) { ?>
             <p>
-              <a class="dropdown-item" href="/<?= $value['nom'] ?>.php?id=<?= $value['id'] ?>"><?= $value['nom'] ?></a>
+              <a class="dropdown-item" href="/<?= $value['nom'] ?>?id=<?= $value['id'] ?>"><?= $value['nom'] ?></a>
             </p>
           <?php } ?>
         </div>
@@ -45,13 +45,13 @@ $genre = $type->findGenre();
             EXPLORER SYMPHONIE
           </h6>
           <p>
-            <a href="/panier.php" class="text-reset text-decoration-none ">Paiment sécurisé</a>
+            <a href="/panier" class="text-reset text-decoration-none ">Paiment sécurisé</a>
           </p>
           <p>
-            <a href="/contact.php" class="text-reset text-decoration-none">Contact</a>
+            <a href="/contact" class="text-reset text-decoration-none">Contact</a>
           </p>
           <p>
-            <a href="/politiquedonnées.php" class="text-reset text-decoration-none">Politique des données</a>
+            <a href="/politiquedonnées" class="text-reset text-decoration-none">Politique des données</a>
           </p>
           <div class="d-flex">
             <i class="bi bi-instagram mx-1 "></i>

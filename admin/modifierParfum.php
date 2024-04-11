@@ -15,11 +15,10 @@ if (!empty($_GET['id'])) {
 
     $produit_info = $produit->find($produit_id);
 
-
     if ($produit_info) {
 
-        $genreId = $produit_info['genreId'];
-        $categorieId = $produit_info['categorieId'];
+        // $genreId = $produit_info['genreId'];
+        // $categorieId = $produit_info['categorieId'];
 
 
         $genre_details = $produit->findGenre($produit_id);
@@ -32,12 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     // Récupérer les données soumises du formulaire
     
     $donneesSoumises = [
-        'nom' => $_POST["nom"],
+        'nom' => $_POST["noms"],
         'description' => $_POST["description"],
         'prix' => $_POST["prix"],
         'contenances' => $_POST["contenances"],
         'rating' => $_POST["rating"],
         'stock' => $_POST["stock"],
+        'genreId' => $_POST["genreId"],
+        'categorieId' => $_POST["categorieId"],
+
     ];
     $differences = array_diff_assoc($donneesSoumises, $donneesActuelles);
 
@@ -45,18 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (!empty($differences)) {
         $update = $produit->updateProduits($_GET['id'], $donneesSoumises);
         if ($update) {
-            header("Location: edit.php?message=1");
+            header("Location: parfum.php");
         }
     }
+
 }
-
-
-
-
-
-
+var_dump($donneesActuelles);
 ?>
-
         <?php
         require_once __DIR__ . "/layout/head.admin.php";
         require_once __DIR__ . "/layout/header.admin.php";
@@ -66,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             <form method="post">
                 <div class="form-group">
                     <label for="nom">Nom:</label>
-                    <input type="text" class="form-control" name="nom" value="<?php echo $produit_info['nom']; ?>">
+                    <input type="text" class="form-control" name="noms" value="<?php echo $produit_info['noms']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="nom">prix:</label>

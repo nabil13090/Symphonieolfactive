@@ -110,7 +110,7 @@ if (isset($_GET['id'])) {
 
                 <button type="button" class="btn btn-primary btn-block btn-lg">
                     <div class="d-flex justify-content-between">
-                        <a class=" text-decoration-none text-white " href="/validationPaiment.php"><span>Payer</span></a>
+                        <a class=" text-decoration-none text-white " href="/validationPaiment"><span>Payer</span></a>
                         <span><?= $total ?> €</span>
                     </div>
                 </button>

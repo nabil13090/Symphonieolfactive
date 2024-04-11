@@ -9,7 +9,7 @@
         <?php require_once __DIR__ . "/templates/fomulaires/connexion.form.php"; ?>
     </div>
     <div class="row justify-content-around">
-        <a class="text-decoration-none " href="/compte.php">
+        <a class="text-decoration-none " href="/compte">
             <h6 class="text-primary ">Première fois chez Symphonie olfactive ?</h6>
         </a>
     </div>

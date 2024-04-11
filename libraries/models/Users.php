@@ -70,16 +70,21 @@ class Users extends Model
         header('Location: comptes.php');
     }
 
-    public function updateUser($id_utilisateur, $nouveau_nom, $nouvel_email, $nouveau_mot_de_passe)
+    public function updateUser($id, $data)
     {
         // Préparation de la requête SQL
-        $query = $this->pdo->prepare('UPDATE utilisateurs SET nom = :nom_modifie, email = :email_modifie, mot_de_passe = :mot_de_passe_modifie WHERE id = :id_utilisateur');
+        $query = $this->pdo->prepare('UPDATE utilisateurs SET nom = :nom, email = :email WHERE id = :id');
 
+        $nom = ($data['nom']);
+        $email = ($data['email']);
+       
+
+
+        
         // Liaison des valeurs
-        $query->bindParam(':nom_modifie', $nouveau_nom);
-        $query->bindParam(':email_modifie', $nouvel_email);
-        $query->bindParam(':mot_de_passe_modifie', $nouveau_mot_de_passe);
-        $query->bindParam(':id_utilisateur', $id_utilisateur);
+        $query->bindParam(':nom', $nom);
+        $query->bindParam(':email', $email);
+        $query->bindParam(':id', $id);
 
         // Exécution de la requête
         $update = $query->execute();

@@ -19,8 +19,8 @@ foreach ($parfum as $value) { ?>
             </div>
             <div class="card-footer my-4 pt-0 border-top-0 bg-transparent ">
                 <div class="text-center">
-                    <a class="btn btn-outline-dark mt-auto text-white me-4 mb-sm-3 my-3" href="/panier.php?id=<?= $value['id'] ?>">Ajout rapide</a>
-                    <a class="btn btn-outline-dark mt-auto  text-white mb-sm-3 " href="/detail.php?id=<?= $value['id'] ?>">Details</a>
+                    <a class="btn btn-outline-dark mt-auto text-white me-4 mb-sm-3 my-3" href="/panier?id=<?= $value['id'] ?>">Ajout rapide</a>
+                    <a class="btn btn-outline-dark mt-auto  text-white mb-sm-3 " href="/detail?id=<?= $value['id'] ?>">Details</a>
                 </div>
             </div>
         </div>

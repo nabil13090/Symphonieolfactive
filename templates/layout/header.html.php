@@ -17,7 +17,7 @@ $genre = $type->findGenre();
     </div>
     <div class="d-flex justify-content-center pt-2">
         <img class="ms-3" height="100px" src="assets/logo/logo.png" alt="">
-        <a class="pi mx-5 text-decoration-none display-6" href="/index.php">Symphonie Olfactive</a>
+        <a class="pi mx-5 text-decoration-none display-6" href="/index">Symphonie Olfactive</a>
     </div>
     <nav class="navbar navbar-expand-lg d-flex justify-content-center">
         <div>
@@ -32,17 +32,17 @@ $genre = $type->findGenre();
                         </a>
                         <ul class="dropdown-menu">
                             <?php foreach ($genre as $value) { ?>
-                                <li><a class="dropdown-item text-uppercase" href="/<?= $value['nom'] ?>.php?id=<?= $value['id'] ?>"><?= $value['nom'] ?></a></li>
+                                <li><a class="dropdown-item text-uppercase" href="/<?= $value['nom'] ?>?id=<?= $value['id'] ?>"><?= $value['nom'] ?></a></li>
                             <?php } ?>
                         </ul>
                     <li class="nav-item mx-3 ">
-                        <a class="nav-link bi bi-telephone-fill" href="/contact.php"> CONTACT</a>
+                        <a class="nav-link bi bi-telephone-fill" href="/contact"> CONTACT</a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link bi bi-person-circle" href="/monespace.php"> MON ESPACE</a>
+                        <a class="nav-link bi bi-person-circle" href="/monespace"> MON ESPACE</a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link bi bi-basket-fill" href="panier.php"> PANIER</a>
+                        <a class="nav-link bi bi-basket-fill" href="panier"> PANIER</a>
                     </li>
                     </li>
                 </ul>

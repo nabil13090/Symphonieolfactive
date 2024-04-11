@@ -13,8 +13,23 @@ class Detail extends Model
     public function find(int $id)
     {
 
+        $query = $this->pdo->prepare("SELECT p.id, p.nom as noms, p.description, p.prix, p.rating, p.stock, p.contenances, c.name, g.nom FROM `produits` p
+        INNER JOIN genres g ON p.genreId = g.id
+        LEFT JOIN categorie c ON p.categorieId = c.id WHERE p.id = :id");
+        // On exécute la requête en précisant le paramètre :article_id 
+        $query->execute([':id' => $id]);
 
-        $query = $this->pdo->prepare("SELECT p.*, i.url FROM produits p INNER JOIN image i ON i.id = p.imageId WHERE p.id = :id");
+        // On fouille le résultat pour en extraire les données réelles de l'article
+        $item = $query->fetch();
+
+        return $item;
+    }
+
+    public function addProduit(int $id)
+    {
+
+
+        $query = $this->pdo->prepare("SELECT p.id, p.nom, p.prix, p.rating, g.nom as `c.name`, p.stock, p.contenances, c.name FROM `produits` p INNER JOIN genres g ON p.genreId = g.id INNER JOIN categorie c ON p.categorieId = c.id WHERE p.id = :id");
         // On exécute la requête en précisant le paramètre :article_id 
         $query->execute([':id' => $id]);
 
@@ -44,35 +59,34 @@ class Detail extends Model
 
     public function updateProduits($id, $data)
     {
-        $query = $this->pdo->prepare('UPDATE produits SET nom = :nom, description = :description, prix = :prix, contenances = :contenances, rating = :rating, stock = :stock, created_at = :created_at, genreId = :genreId, imageId = :imageId, categorieId = :categorieId WHERE id = :id;');
+        $query = $this->pdo->prepare('UPDATE produits SET nom = :nom, description = :description, prix = :prix, contenances = :contenances, rating = :rating,
+         stock = :stock, genreId = :genreId, categorieId = :categorieId
+        WHERE id = :id;');
 
         // Échapper les caractères spéciaux pour éviter les attaques par injection SQL
-        $nom = htmlspecialchars($data['nom']);
-        $description = htmlspecialchars($data['description']);
+        $nom = ($data['nom']);
+        $description = ($data['description']);
 
         // Convertir les valeurs en types appropriés
         $prix = floatval($data['prix']);
         $contenances = intval($data['contenances']);
         $rating = floatval($data['rating']);
         $stock = intval($data['stock']);
-        $created_at = floatval($data['created_at']);
         $genreId = intval($data['genreId']);
-        $imageId = intval($data['imageId']);
         $categorieId = intval($data['categorieId']);
 
         // Exécution de la requête
+        $query->bindParam(':id', $id);
         $query->bindParam(':nom', $nom);
         $query->bindParam(':description', $description);
         $query->bindParam(':prix', $prix);
         $query->bindParam(':contenances', $contenances);
         $query->bindParam(':rating', $rating);
         $query->bindParam(':stock', $stock);
-        $query->bindParam(':created_at', $created_at);
         $query->bindParam(':genreId', $genreId);
-        $query->bindParam(':imageId', $imageId);
         $query->bindParam(':categorieId', $categorieId);
 
-        $update = $query->execute(['id' => $id]);
+        $update = $query->execute();
         return $update;
     }
 

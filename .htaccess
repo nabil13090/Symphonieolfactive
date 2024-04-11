@@ -1,5 +1,23 @@
 RewriteEngine On
 
+# Réécriture pour masquer l'ID dans l'URL
+RewriteRule ^page/([^/]+)/?$ page.php?id=$1 [L]
+
+# Rediriger les requêtes vers les fichiers non existants ou les répertoires vers index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?pages=$1
+RewriteRule ^(.*)$ index.php [L]
+
+# Rediriger les URL sans .php vers le fichier avec .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)/?$ $1.php [NC,L]
+
+# Réécriture pour traiter l'URL sans l'identifiant
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^page/([^/]+)$ page.php?id=$1 [L]
+
+# Réécriture pour rediriger l'URL avec l'identifiant vers l'URL sans l'identifiant
+RewriteCond %{THE_REQUEST} \s/page\.php\?id=([0-9]+)\s [NC]
+RewriteRule ^ /page/%1? [R=301,L]

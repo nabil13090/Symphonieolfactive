@@ -32,7 +32,7 @@ $parfum = $parfums->findByCategorie();
                 floraux pour la mère,
                 et des senteurs sucrées pour les enfants. <strong>Symphonie Olfactive</strong>, le parfum de votre histoire.
             </p>
-            <button type="button" class="btn btn-primary btn-lg btn-block mt-5 "><a class=" text-decoration-none text-white" href="/detail.php?id=<?= $value['id'] ?>">FRAGRANCES</a></button>
+            <button type="button" class="btn btn-primary btn-lg btn-block mt-5 "><a class=" text-decoration-none text-white" href="/detail?id=<?= $value['id'] ?>">FRAGRANCES</a></button>
         </div>
         <div class="col-md-6">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">

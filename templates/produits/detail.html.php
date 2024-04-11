@@ -26,7 +26,7 @@ $detail = $parfumDetail->find($currentid);
                     <div class="ratings d-flex justify-content-center  mx-auto mb-3 ">Note : &nbsp; <?php $rating->getStar($detail['rating']); ?></div>
                     <p class="card-text  text-center "><small class="text-body-secondary"><?= $detail['contenances'] ?> ML</small></p>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto text-white " href="/panier.php?id=<?= $detail['id'] ?>">Acheter</a>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto text-white " href="/panier?id=<?= $detail['id'] ?>">Acheter</a>
                         </div>
                     </div>
                 </div>
