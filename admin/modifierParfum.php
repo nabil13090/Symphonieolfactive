@@ -13,7 +13,7 @@ $produit = new Detail();
 if (!empty($_GET['id'])) {
     $produit_id = $_GET['id'];
 
-    $produit_info = $produit->find($produit_id);
+    $produit_info = $produit->findAdmin($produit_id);
 
     if ($produit_info) {
 
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 
 }
-var_dump($donneesActuelles);
+
 ?>
         <?php
         require_once __DIR__ . "/layout/head.admin.php";

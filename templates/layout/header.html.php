@@ -1,9 +1,12 @@
 <?php
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
+
 use Models\Produit;
+
 $type = new Produit();
 $genre = $type->findGenre();
 ?>
+
 <body>
     <div class="top">
         <span class="txt me-4">Symphonie olfactive Aix en Provence</span>
