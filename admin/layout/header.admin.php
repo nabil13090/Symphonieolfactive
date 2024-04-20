@@ -1,14 +1,37 @@
 <body>
     <div class="wrapper">
-        <div class="sidebar">
-            <h2>Menu</h2>
-            <nav class="nav flex-column">
-                <ul>
-                    <li><a class="nav-link active bi bi-house-gear-fill" href="/admin/dashBord.php"> DashBord</a></li>
-                    <li><a class="nav-link active bi bi-gear" href="/admin/parfum.php"> Parfums</a></li>
-                    <li><a class="nav-link active bi bi-person-fill-gear" href="/admin/comptes.php"> Compte Clients</a></li>
-                    <li><a href="/plustard.php" class=" nav-link me-3 align-items-center mt-2 bi bi-box-arrow-left">Deconnexion</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+        <aside id="sidebar" style="min-height: 100%;">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a class="text-decoration-none" href="#">Tableau Gestion</a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="/admin/dashBord.php" class="sidebar-link text-decoration-none ">
+                        <i class="bi bi-gear"></i>
+                        <span>Dashbord</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="/admin/parfum.php" class="sidebar-link text-decoration-none">
+                        <i class="bi bi-boxes"></i>
+                        <span> Parfums</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="/admin/comptes.php" class="sidebar-link text-decoration-none">
+                        <i class="bi bi-person"></i>
+                        <span>Compte Clients</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="/plustard.php" class="sidebar-link text-decoration-none">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Deconnexion</span>
+                    </a>
+                </li>
+        </aside>

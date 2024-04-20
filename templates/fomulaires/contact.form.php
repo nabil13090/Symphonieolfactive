@@ -1,5 +1,3 @@
-
-
 <div class="container py-5 mb-5 ">
     <div class="row">
         <aside class="col-12 col-md-4">
@@ -33,7 +31,7 @@
         <section class="contact col-12 col-sm-8">
             <h2 class="mb-5 mt-4">Formulaire de contact</h2>
             <div class="container g-0">
-                <form class="row text-uppercase">
+                <form class="row text-uppercase" action="contact" method="post">
                     <div class="col-lg-7 mb-4">
                         <div class="form-floating">
                             <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="lname" placeholder="Votre nom" required>
@@ -43,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                <div class="col-lg-5 mb-4">
+                    <div class="col-lg-5 mb-4">
                         <div class="form-floating">
                             <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="fname" placeholder="Votre prénom" required>
                             <label for="fname">Votre prénom</label>
@@ -94,7 +92,7 @@
                     </div>
 
                     <div class="col-12 bg">
-                        <button class="btn btn-lg button-hover-gold border border-black rounded-0 text-uppercase fw-bolder my-3  px-5 text-white " type="submit">Envoyer</button>
+                        <button class="btn btn-lg button-gold border border-black rounded-0 text-uppercase fw-bolder my-3  px-5 text-white " type="submit">Envoyer</button>
                     </div>
                 </form>
             </div>

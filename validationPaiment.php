@@ -1,4 +1,5 @@
-<?php ob_start() ?>
+<?php session_start();
+ob_start() ?>
 
 <section class="text-center pt-4 mb-5">
     <h3 class=" mb-5 ">VALIDATION DE TRANSACTION</h3>
@@ -7,8 +8,6 @@
     <img src="/assets/images/visa.png" alt="visa" class="vis position-absolute " style="min-width: 150px; min-height:150px;">
     <h4 class=" val position-absolute text-danger "><strong> TRANSACTION EN COURS.......</br> AVEC VOTRE BANQUE</strong></h4>
 </section>
-
-
 <?php
 $title = "Transaction";
 $img = "assets/background/transaction.jpg";

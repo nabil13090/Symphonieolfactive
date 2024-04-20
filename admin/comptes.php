@@ -1,24 +1,16 @@
-<?php
-require_once dirname(__DIR__, 1) . "/libraries/autoload.php";
+<?php require_once dirname(__DIR__, 1) . "/libraries/autoload.php";
 
 use Models\Users;
 
 $user = new Users();
-
-$users = $user->findUserAll();
-
-
-
-
-?>
+$users = $user->findUserAll(); ?>
 <?php
 require_once __DIR__ . "/layout/head.admin.php";
 require_once __DIR__ . "/layout/header.admin.php";
 ?>
-<div class="d-flex justify-content-center py-3 bg-black mb-3  ">
-  <h2 class="text-white">Console Gestion Comptes</h2>
-</div>
+
 <section class="intro">
+  <h2 class=" text-lg-center ">Modification des profils clients</h2>
   <div>
     <div class="table-responsive">
       <table class="table table-borderless mb-0">
@@ -28,8 +20,8 @@ require_once __DIR__ . "/layout/header.admin.php";
             <th scope="col">Nom</th>
             <th scope="col">Email</th>
             <th scope="col">Rôle</th>
-            <th scope="col" class="display-6">Update</th>
-            <th scope="col" class="display-6">Delete</th>
+            <th class="text-center" scope="col">Update</th>
+            <th class="text-center" scope="col">Delete</th>
           </tr>
         </thead>
         <tbody>

@@ -16,10 +16,9 @@ $parfum = $parfums->findAdminProduits();
 require_once __DIR__ . "/layout/head.admin.php";
 require_once __DIR__ . "/layout/header.admin.php";
 ?>
-<div class="d-flex justify-content-center py-3 bg-black mb-3  ">
-  <h2 class="text-white">Console Gestion Parfums</h2>
-</div>
+
 <section class="intro">
+  <h2 class=" text-lg-center ">Modification des produits</h2>
   <div>
     <div class="table-responsive">
       <table class="table table-borderless mb-0">
@@ -32,8 +31,8 @@ require_once __DIR__ . "/layout/header.admin.php";
             <th scope="col">stock</th>
             <th scope="col">genre</th>
             <th scope="col">note</th>
-            <th scope="col" class="display-6">Update</th>
-            <th scope="col" class="display-6">Delete</th>
+            <th class="text-center" scope="col">Update</th>
+            <th class="text-center" scope="col">Delete</th>
           </tr>
         </thead>
         <tbody>

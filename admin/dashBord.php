@@ -1,20 +1,18 @@
 <?php
-
-
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     // Vérifier les identifiants de connexion et démarrer la session si l'utilisateur est authentifié
-// }
-
-// if (!isset($_SESSION['id']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-//     // Si l'utilisateur n'est pas connecté ou n'a pas le rôle d'administrateur, le rediriger vers la page d'accueil
-//     header('Location: index.php');
-//     exit();
-// }
-
+session_start();
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['id'])) {
+  // Rediriger vers la page de connexion s'il n'est pas connecté
+  header("Location: ../monespace");
+  exit();
+}
+// Vérifier si l'utilisateur a le rôle d'admin
+if ($_SESSION['role'] !== 'admin') {
+  // Rediriger vers une page d'erreur ou une autre page appropriée
+  header("Location: ../index");
+  exit();
+}
 require_once __DIR__ . "/layout/head.admin.php";
 require_once __DIR__ . "/layout/header.admin.php"; ?>
-<div class="d-flex justify-content-center py-3 bg-black mb-3  ">
-  <h2 class="text-white">Dashbord Administrateur</h2>
-</div>
-
-  <?php require_once __DIR__ . "/layout/footer.admin.php"; ?>
+  <h2 class=" text-lg-center ">Modification du site Symphonie OLFACTIVE</h2>
+<?php require_once __DIR__ . "/layout/footer.admin.php"; ?>

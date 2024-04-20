@@ -93,4 +93,14 @@ class Users extends Model
         return $update;
     }
 
+
+    public function retrieveBannerData($title)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM bannieres WHERE TitrePage = ?");
+
+        $query->execute([$title]);
+        $allProduits = $query->fetchAll();
+        return $allProduits;
+    }
+
 }

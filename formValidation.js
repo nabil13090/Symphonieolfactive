@@ -13,6 +13,13 @@ let emailValid = false;
 let subjectValid = false;
 let msgValid = false;
 
+let fnameValue = "";
+let lnameValue = "";
+let phoneValue = "";
+let emailValue = "";
+let subjectValue = "";
+let msgValue = "";
+
 // Regex
 const UserRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/u;
 const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -36,12 +43,24 @@ function addCLass(element, regex, value, valid) {
 // Execute la fonction addClass(element, regex, value)
 lnameInput.addEventListener('input', (e) => {
     addCLass(lnameInput, UserRegex, e.target.value, lnameValid);
-    lnameInput.classList.contains('is-valid') ? lnameValid = true : lnameValid = false;
+    if (lnameInput.classList.contains('is-valid')) {
+        lnameValid = true;
+        lnameValid = e.target.value;
+    } else {
+        lnameValid = false;
+        lnameValue = "";
+    }
 });
 
 fnameInput.addEventListener('input', (e) => {
     addCLass(fnameInput, UserRegex, e.target.value, fnameValid);
-    fnameInput.classList.contains('is-valid') ? fnameValid = true : fnameValid = false;
+    if (fnameInput.classList.contains('is-valid')) {
+        fnameValid = true;
+        fnameValid = e.target.value;
+    } else {
+        fnameValid = false;
+        fnameValue = "";
+    }
 });
 
 phoneInput.addEventListener('input', (e) => {
@@ -79,15 +98,14 @@ form.addEventListener('submit', (e) => {
     if (fnameValid && lnameValid && phoneValid && emailValid && subjectValid && msgValid) {
         // Function sendMail
         Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "maillotjacques13@gmail.com",
-            Password: "ABF36EADED0E1127FC735E9DD13AA06EE774",
-            To: 'maillotjacques13@gmail.com',
-            From: "maillotjacques13@gmail.com",
-            Subject: "This is the subject",
-            Body: "And this is the body"
-        }).then(
-            message => alert(message)
-        );
-    }
+            SecureToken: "d2276649-3f8d-445b-a903-aa2f4d25989c",
+            To: "nabil.chetouane13090@gmail.com",
+            From: "nabil.chetouane13090@gmail.com",
+            Subject: subjectInput.value,
+            Body: `Prenom : ${fnameValue} <br> 
+                   Nom: ${lnameValue} <br>
+                   Telephone : ${phoneValue} <br>
+                   Message : ${msgValue}`
+        }).then(message => message == 'OK' && location.reload())
+        }
 })

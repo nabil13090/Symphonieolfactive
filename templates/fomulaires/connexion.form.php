@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
 
 use Models\Users;

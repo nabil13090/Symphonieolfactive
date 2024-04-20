@@ -1,4 +1,5 @@
-<?php ob_start(); ?>
+<?php session_start();
+ob_start(); ?>
 
 
 <section class="text-center pt-4">

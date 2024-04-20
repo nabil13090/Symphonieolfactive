@@ -6,7 +6,7 @@ use Models\Users;
 $produit = new Users();
 $produit_id = $_GET['id'];
 $donneesActuelles = $produit->findUser($produit_id);
-var_dump($donneesActuelles);
+
 $roles = $produit->roleUser();
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     
