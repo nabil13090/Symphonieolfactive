@@ -93,7 +93,7 @@ class Produit extends Model
 
     public function insert($data)
     {
-        $query = $this->pdo->prepare('INSERT INTO produits (nom, description, prix, contenances, rating, stock, created_at, genreId, imageId, categorieId) VALUES (:nom, :description, :prix, :contenances, :rating, :stock, :created_at, :genreId, :imageId, :categorieId)');
+        $query = $this->pdo->prepare('INSERT INTO produits (nom, description, prix, contenances, rating, stock, imageId) VALUES (:nom, :description, :prix, :contenances, :rating, :stock, :imageId)');
 
         // Échapper les caractères spéciaux pour éviter les attaques par injection SQL
         $nom = htmlspecialchars($data['nom']);
@@ -104,10 +104,9 @@ class Produit extends Model
         $contenances = intval($data['contenances']);
         $rating = floatval($data['rating']);
         $stock = intval($data['stock']);
-        $created_at = htmlspecialchars($data['created_at']);
-        $genreId = intval($data['genreId']);
         $imageId = intval($data['imageId']);
-        $categorieId = intval($data['categorieId']);
+
+        
 
         // Exécution de la requête
         $query->bindParam(':nom', $nom);
@@ -116,13 +115,23 @@ class Produit extends Model
         $query->bindParam(':contenances', $contenances);
         $query->bindParam(':rating', $rating);
         $query->bindParam(':stock', $stock);
-        $query->bindParam(':created_at', $created_at);
-        $query->bindParam(':genreId', $genreId);
         $query->bindParam(':imageId', $imageId);
-        $query->bindParam(':categorieId', $categorieId);
+
 
         $insert = $query->execute();
         return $insert;
+    }
+    function insertImage($url)
+    {
+        $query = $this->pdo->prepare('INSERT INTO `image` (url) VALUES (:url)');
+        $query->bindParam(':url', $url);
+        $insert = $query->execute();
+        if ($insert) {
+            // Retourner l'ID de l'image insérée
+            return $this->pdo->lastInsertId();
+        } else {
+            return false;
+        }
     }
 
  

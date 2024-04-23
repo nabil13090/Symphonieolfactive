@@ -17,6 +17,12 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a href="/admin/ajoutParfum.php" class="sidebar-link text-decoration-none">
+                        <i class="bi bi-file-earmark-plus"></i>
+                        <span>Ajouter</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a href="/admin/parfum.php" class="sidebar-link text-decoration-none">
                         <i class="bi bi-boxes"></i>
                         <span> Parfums</span>
