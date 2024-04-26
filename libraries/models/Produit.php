@@ -50,8 +50,6 @@ class Produit extends Model
     }
 
 
-
-
     public function findAdminProduits()
     {
         $query = $this->pdo->prepare("SELECT p.id, p.nom, p.prix, p.rating, g.nom as name, p.stock, p.contenances FROM `produits` p INNER JOIN genres g ON p.genreId = g.id");
@@ -121,6 +119,7 @@ class Produit extends Model
         $insert = $query->execute();
         return $insert;
     }
+
     function insertImage($url)
     {
         $query = $this->pdo->prepare('INSERT INTO `image` (url) VALUES (:url)');

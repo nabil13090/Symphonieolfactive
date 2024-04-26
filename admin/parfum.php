@@ -4,19 +4,12 @@ require_once dirname(__DIR__, 1) . "/libraries/autoload.php";
 use Models\Produit;
 
 $parfums = new Produit();
-
 $parfum = $parfums->findAdminProduits();
-
-
-
-
-// var_dump($parfum);
 ?>
 <?php
 require_once __DIR__ . "/layout/head.admin.php";
 require_once __DIR__ . "/layout/header.admin.php";
 ?>
-
 <section class="intro">
   <h2 class=" text-lg-center ">Modification des produits</h2>
   <div>
@@ -57,11 +50,5 @@ require_once __DIR__ . "/layout/header.admin.php";
         </tbody>
       </table>
     </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
   </div>
 </section>

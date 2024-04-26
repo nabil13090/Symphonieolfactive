@@ -1,18 +1,11 @@
 <?php
-
-
-
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
 
 use Models\Produit;
 
 $parfums = new Produit();
-
-
 $parfum = $parfums->findByCategorie();
-
 ?>
-
 <div class="card bg-light">
     <div class="row">
         <div class="col-md-6 p-4">

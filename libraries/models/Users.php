@@ -78,9 +78,6 @@ class Users extends Model
         $nom = ($data['nom']);
         $email = ($data['email']);
        
-
-
-        
         // Liaison des valeurs
         $query->bindParam(':nom', $nom);
         $query->bindParam(':email', $email);

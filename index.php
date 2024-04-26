@@ -20,7 +20,6 @@ ob_start(); ?>
     <?php require_once __DIR__ . "/templates/produits/cardsAvis.php";
     ?>
 </div>
-
 <?php
 $title = "Accueil";
 $img = "assets/background/accueil2.jpg";

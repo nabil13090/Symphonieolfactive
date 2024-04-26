@@ -1,29 +1,30 @@
-*{
+* {
     font-family: Baskerville Old Face;
 }
 
 
-body{
+body {
     font-family: Baskerville Old Face;
     color: rgb(2, 2, 100);
 }
 
-.txt{
+.txt {
     animation: Scroll 10s linear infinite;
     color: azure !important;
 }
 
 
 @keyframes Scroll {
-    0%{
+    0% {
         transform: translateX(0);
     }
-    100%{
+
+    100% {
         transform: translateX(-50%);
     }
-    }
+}
 
-.top{
+.top {
     background-color: rgb(2, 2, 100);
     width: 100%;
     display: flex;
@@ -31,14 +32,15 @@ body{
     overflow: hidden;
 }
 
-.w-100{
+.w-100 {
     margin-bottom: -10px !important;
 }
 
 
-header{
+header {
     position: relative;
 }
+
 header p {
 
     position: relative;
@@ -46,11 +48,12 @@ header p {
 
 }
 
-ul li{
+ul li {
     font-family: Baskerville Old Face;
-    color: rgb(2, 2, 100)  !important;
+    color: rgb(2, 2, 100) !important;
 }
-.texttop{
+
+.texttop {
     color: azure;
     position: absolute;
     top: 25%;
@@ -58,29 +61,29 @@ ul li{
     font-family: Baskerville Old Face;
 }
 
-main .btn{
+main .btn {
     background-color: rgb(2, 2, 100);
 }
 
-.cards-wrapper{
+.cards-wrapper {
     display: flex;
 }
 
-.text-center .mt-5{
+.text-center .mt-5 {
     background-color: rgb(2, 2, 100);
 
-} 
+}
 
 
 
-footer{
+footer {
     background-color: rgb(2, 2, 100) !important;
     color: azure;
     font-family: Baskerville Old Face;
 
 }
 
-.d-flex .pi{
+.d-flex .pi {
     color: rgb(73, 71, 71) !important;
     font-family: Baskerville Old Face;
     font-size: calc(9px + 4vw);
@@ -92,24 +95,26 @@ main section h1 {
 
 
 
-section .avs{
+section .avs {
     background-color: rgb(2, 2, 100) !important;
 }
 
-.title{
+.title {
     background-color: rgb(2, 2, 100) !important;
 }
 
-.title h2{
+.title h2 {
     font-family: Baskerville Old Face;
     color: azure;
 }
-.container h3{
+
+.container h3 {
 
     font-family: Baskerville Old Face;
 
 }
-.chargement{
+
+.chargement {
     border: 10px solid #f3f3f3;
     border-top: 10px solid #2c3e50;
     border-bottom: 10px solid #e74c3c;
@@ -120,15 +125,15 @@ section .avs{
     -o-animation: spin 3s linear infinite;
     animation: spin 3s linear infinite;
     margin: auto;
-    
+
 }
 
-.val{
+.val {
     top: 142%;
     left: 42%;
 }
 
-.vis{
+.vis {
     top: 107%;
     left: 37%;
 }

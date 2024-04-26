@@ -7,14 +7,10 @@ $type = new Produit();
 $genre = $type->findGenre();
 ?>
 <footer class="pt-3">
-  <!-- Section: Links  -->
   <section class="text-center text-lg-start text-muted mt-3 ">
     <div class="container text-center text-white  text-md-start mt-5">
-      <!-- Grid row -->
       <div class="row mt-3">
-        <!-- Grid column -->
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
             Symphony Olfactive
           </h6>
@@ -22,11 +18,7 @@ $genre = $type->findGenre();
             Site de vente de parfum de luxe et variée pour toute la famille.
           </p>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
             FRAGRANCES
           </h6>
@@ -36,11 +28,7 @@ $genre = $type->findGenre();
             </p>
           <?php } ?>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
             EXPLORER SYMPHONIE
           </h6>
@@ -60,30 +48,19 @@ $genre = $type->findGenre();
             <i class="bi bi-twitter-x mx-1"></i>
           </div>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Rendez-nous visite aussi en boutique !</h6>
           <p>7 cours Mirabeau Aix en Provence</p>
           <p> Symphonie@olfactive.com</p>
           <p>06 95 80 08 18</p>
         </div>
-        <!-- Grid column -->
       </div>
-      <!-- Grid row -->
     </div>
   </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright -->
   <div class="text-center p-4">
     <?= date('Y'); ?> © Copyright : Symphonie Olfactive
   </div>
-  <!-- Copyright -->
 </footer>
-<!-- Footer -->
 </body>
 
 </html>

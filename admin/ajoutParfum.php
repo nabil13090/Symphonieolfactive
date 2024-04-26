@@ -6,10 +6,6 @@ use Models\Produit;
 
 $parfums = new Produit();
 
-
-
-
-
 $target_dir = "../assets/images/parfum/"; // Dossier où vous souhaitez stocker les images
 $image_path = null;
 

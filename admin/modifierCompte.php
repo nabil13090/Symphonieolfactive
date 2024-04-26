@@ -9,14 +9,15 @@ $donneesActuelles = $produit->findUser($produit_id);
 
 $roles = $produit->roleUser();
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    
+
     // Récupérer les données soumises du formulaire
     $donneesSoumises = [
         'nom' => $_POST["nom"],
         'email' => $_POST["email"],
 
     ];
-    $differences = array_diff_assoc($donneesSoumises,
+    $differences = array_diff_assoc(
+        $donneesSoumises,
         $donneesActuelles
     );
 
@@ -49,9 +50,5 @@ require_once __DIR__ . "/layout/header.admin.php";
         </div>
         <button type="submit" class="btn btn-primary mt-5 ">Modifier</button>
     </form>
-</div>
-</form>
-</div>
-</div>
 </div>
 </section>

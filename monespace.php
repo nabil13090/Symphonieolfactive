@@ -1,7 +1,5 @@
 <?php session_start();
 ob_start(); ?>
-
-
 <section class="text-center pt-4">
     <h1>SYMPHONIE OLFACTIVE</h1>
 </section>

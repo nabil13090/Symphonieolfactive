@@ -1,6 +1,5 @@
 <?php session_start();
 ob_start() ?>
-
 <section class="text-center pt-4 mb-5">
     <h1 class="mb-2">SYMPHONIE OLFACTIVE</h1>
     <h2 class="mt-5 text-white">CONDITIONS GÉNÉRALES DE VENTE</h2>
@@ -18,13 +17,10 @@ ob_start() ?>
         Symphonie Olfactive ne saurait être responsable de toutes pertes de données, fichiers. Il appartient à l'Acheteur de procéder à toutes les sauvegardes nécessaires. Le site Symphonie Olfactive contient également des informations provenant de tierces personnes, et des liens vers d'autres sites Internet.
         Symphonie Olfactive ne pourra en aucun cas être tenue pour responsable des dommages résultant de l'utilisation, de l'accès à, ou de l'incapacité à utiliser ces informations tierces, ni au contenu des autres sites Internet.</p>
 </section>
-
-
 <?php
 $title = "Politique des données";
 $img = "assets/background/politiquedonnées.jpg";
 $titre = "POLITIQUE DES  DONNÉES";
 $content = ob_get_clean();
 ?>
-
 <?php require "template.php"; ?>

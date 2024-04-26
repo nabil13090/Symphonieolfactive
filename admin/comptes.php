@@ -44,10 +44,4 @@ require_once __DIR__ . "/layout/header.admin.php";
       </table>
     </div>
   </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
 </section>

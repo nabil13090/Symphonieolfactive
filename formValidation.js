@@ -109,3 +109,4 @@ form.addEventListener('submit', (e) => {
         }).then(message => message == 'OK' && location.reload())
         }
 })
+

@@ -8,8 +8,6 @@ $currentid = $_GET['id'];
 
 $client->delete($currentid);
 
-
-
 ?>
 <?php
 require_once __DIR__ . "/layout/head.admin.php";

@@ -8,12 +8,10 @@
                     7 cours Mirabeau<br>
                     13100 Aix en Provence
                 </address>
-
                 <h3 class="mt-4 mb-1">Téléphone</h3>
                 <address>
                     <a href="tel:+33559478418" class="text-black text-decoration-none">06 95 80 08 18</a>
                 </address>
-
                 <h3 class="mt-4 mb-1">Horaires</h3>
                 <p>
                     Du lundi au vendredi<br>
@@ -50,7 +48,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-5 mb-4">
                         <div class="form-floating">
                             <input type="tel" class="form-control border border-black rounded-0 bg-lightgrey" id="tel" placeholder="Votre téléphone" required>
@@ -60,7 +57,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-7 mb-4">
                         <div class="form-floating">
                             <input type="email" class="form-control border border-black rounded-0 bg-lightgrey" id="emailInput" placeholder="Votre email" required>
@@ -70,7 +66,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-12 mb-4">
                         <div class="form-floating">
                             <input type="text" class="form-control border border-black  rounded-0 bg-lightgrey" id="subject" placeholder="Sujet" required>
@@ -80,7 +75,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-12 mb-4-custom">
                         <div class="form-floating">
                             <textarea class="form-control border border-black rounded-0 bg-lightgrey" placeholder="Votre message" id="message" required></textarea>

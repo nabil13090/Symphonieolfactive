@@ -7,9 +7,6 @@ $parfums = new Produit();
 $currentid = $_GET['id'];
 
 $parfums->delete($currentid);
-
-
-
 ?>
 <?php
 require_once __DIR__ . "/layout/head.admin.php";

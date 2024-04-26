@@ -1,16 +1,9 @@
 <?php
-
-
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
-
 
 use Models\Detail;
 // use Controllers\PanierController;
-
-
 $parfumDetail = new Detail();
-
-
 // Initialise le panier s'il n'existe pas déjà
 if (!isset($_SESSION['panier'])) {
     $_SESSION['panier'] = array();
@@ -27,10 +20,7 @@ if (isset($_GET['id'])) {
         die("Le produit par défaut n'existe pas");
     }
 }
-
-
 ?>
-
 <div class="table-responsive">
     <table class="table">
         <thead>
@@ -47,8 +37,6 @@ if (isset($_GET['id'])) {
             foreach ($_SESSION['panier'] as $id => $item) {
                 $prix_total_produit = $item['quantite'] * $item['prix'];
                 $total += $prix_total_produit;
-                
-
             ?>
                 <tr>
                     <th scope="row">
@@ -86,14 +74,13 @@ if (isset($_GET['id'])) {
         </tbody>
     </table>
 </div>
-
 <div class="card shadow-2-strong mb-5 mb-lg-0" style="border-radius: 16px;">
     <div class="card-body p-4 ">
         <div class="row d-flex justify-content-end ">
             <div class="col-lg-4 col-xl-3">
                 <div class="d-flex justify-content-between">
                     <p class="mb-2">Total HT</p>
-                    <p class="mb-2"><?= ($total - ($total * 0.18))?> €</p>
+                    <p class="mb-2"><?= ($total - ($total * 0.18)) ?> €</p>
                 </div>
 
                 <div class="d-flex justify-content-between">

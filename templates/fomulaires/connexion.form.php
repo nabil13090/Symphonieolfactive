@@ -1,13 +1,7 @@
 <?php
-
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
-
 use Models\Users;
-
 $connexion = new Users();
-
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $mot_de_passe = $_POST['mot_de_passe'];
@@ -17,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['id'] = $utilisateur['id'];
         $_SESSION['role'] = $utilisateur['role'];
         $_SESSION['nom'] = $utilisateur['nom'];
-
 
         if ($_SESSION['role'] === 'admin') {
             header('Location: admin/dashBord.php');
@@ -34,7 +27,6 @@ if (isset($_SESSION['inscrit'])) {
     unset($_SESSION['inscrit']);
 }
 ?>
-
 <div class="mb-3">
     <h6 class="text-primary">Deja venu ici ?</h6>
     <h3 class="mb-5 mt-4">Connexion</h3>
