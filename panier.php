@@ -9,9 +9,7 @@ ob_start(); ?>
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <h2 class="mb-3">VOTRE PANIER</h2>
                 <div class="col">
-
                     <?php require_once __DIR__ . "/templates/fomulaires/panier.form.php"; ?>
-
                 </div>
             </div>
         </div>

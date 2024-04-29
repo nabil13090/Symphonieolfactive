@@ -1,7 +1,11 @@
 <?php session_start();
 ob_start() ?>
-
-<section class="text-center pt-4 mb-5">
+<section class=" text-center mb-5  ">
+    <picture>
+        <img src="/assets/images/encours-maintenance.png" alt="maintenace en cour">
+    </picture>
+</section>
+<!-- <section class="text-center pt-4 mb-5">
     <h3 class=" mb-5 text-bg-success ">VOTRE PAIMENT A ETE VALIDE</h3>
     <div class=" d-flex justify-content-around mb-5 ">
         <img src="/assets/images/feu.gif" height="100px" alt="">
@@ -38,11 +42,11 @@ ob_start() ?>
             </p>
         </div>
     </div>
-</section>
+</section> -->
 <?php
 $title = "Transaction";
 $img = "assets/background/transaction.jpg";
-$titre = "Commande validée";
+$titre = "";
 $content = ob_get_clean();
 ?>
 <?php require "template.php"; ?>

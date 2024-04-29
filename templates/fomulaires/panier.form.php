@@ -1,15 +1,22 @@
 <?php
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
 
+
+
+
+
 use Models\Detail;
 // use Controllers\PanierController;
+
+
+
 $parfumDetail = new Detail();
 // Initialise le panier s'il n'existe pas déjà
 if (!isset($_SESSION['panier'])) {
     $_SESSION['panier'] = array();
 }
-// Vérifie si un produit est ajouté au panier
-if (isset($_GET['id'])) {
+
+if (isset($_GET['id'])) { // 1
     $parfumDetail->addProductPanier(intval($_GET["id"]));
 } else {
     // Si l'identifiant n'est pas fourni, définir un identifiant par défaut
@@ -20,6 +27,34 @@ if (isset($_GET['id'])) {
         die("Le produit par défaut n'existe pas");
     }
 }
+
+
+
+if (isset($_POST['valide_panier'])) {
+
+    $date_create = date('y-m-d');
+    $statut = 'en preparation';
+
+    try {
+        $parfumDetail->getBeginTransaction();
+        $parfumDetail->insertCommande($_SESSION['id'], $date_create, $statut, $_SESSION['total']);
+        $commande_id = $parfumDetail->getLastinsert();
+            foreach ($_SESSION['panier'] as $produit) {
+            $parfumDetail->getCommande($commande_id, $produit['id'], $produit['quantite']);
+        }
+        $parfumDetail->getCommit();
+        $_SESSION['panier'] = [];
+    } catch (PDOException $e) {
+        $parfumDetail->getRoll();
+        echo "erreur : " . $e->getMessage();
+    }
+}
+
+
+
+
+
+
 ?>
 <div class="table-responsive">
     <table class="table">
@@ -74,10 +109,13 @@ if (isset($_GET['id'])) {
         </tbody>
     </table>
 </div>
+
+
 <div class="card shadow-2-strong mb-5 mb-lg-0" style="border-radius: 16px;">
     <div class="card-body p-4 ">
         <div class="row d-flex justify-content-end ">
             <div class="col-lg-4 col-xl-3">
+
                 <div class="d-flex justify-content-between">
                     <p class="mb-2">Total HT</p>
                     <p class="mb-2"><?= ($total - ($total * 0.18)) ?> €</p>
@@ -94,13 +132,15 @@ if (isset($_GET['id'])) {
                     <p class="mb-2">Total TTC</p>
                     <p class="mb-2"><?= $total ?> €</p>
                 </div>
-
-                <button type="button" class="btn btn-primary btn-block btn-lg">
-                    <div class="d-flex justify-content-between">
-                        <a class=" text-decoration-none text-white " href="/validationPaiment"><span>Payer</span></a>
-                        <span><?= $total ?> €</span>
-                    </div>
-                </button>
+                <form action="panier.php" method="post">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg" name="valide_panier">
+                        <div class="d-flex justify-content-between">
+                            <a class=" text-decoration-none text-white " href="/validationPaiment" onclick="return confirm('Voulez vous valider votre panier ?');"><span>Payer</span></a>
+                            <span><?php $_SESSION['total'] = $total;
+                                    echo $total ?> €</span>
+                        </div>
+                    </button>
+                </form>
             </div>
         </div>
     </div>

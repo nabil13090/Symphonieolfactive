@@ -123,5 +123,48 @@ class Detail extends Model
         return  $allProduits;
     }
 
+    public function insertCommande($user_id, $date_create, $staut, $price)
+    {
+        $query = $this->pdo->prepare('INSERT INTO commande (user_id, date_create, staut, price) VALUES (:user_id, :date_create, :staut, :price)');
+
+        // Échapper les caractères spéciaux pour éviter les attaques par injection SQL
+        $user_id = intval($user_id);
+        $date_create = htmlspecialchars($date_create);
+        $staut = htmlspecialchars($staut); // Utilisez htmlspecialchars si nécessaire
+        $price = floatval($price);
+
+        // Exécution de la requête
+        $query->bindParam(':user_id', $user_id);
+        $query->bindParam(':date_create', $date_create);
+        $query->bindParam(':staut', $staut);
+        $query->bindParam(':price', $price);
+
+        $inserted = $query->execute();
+
+        return $inserted;
+    }
+
+    public function getCommande($commande_id, $produits_id, $quantite)
+    {
+
+       
+        $query = $this->pdo->prepare("INSERT INTO `commande_produits`(`commande_id`, `produits_id`, `quantite`) VALUES ( :commande_id, :produits_id, :quantite)");
+
+        $commande_id = intval($commande_id);
+        $produits_id = intval($produits_id);       // Utilisez htmlspecialchars si nécessaire
+        $quantite = floatval($quantite);
+
+        // Exécution de la requête
+        $query->bindParam(':commande_id', $commande_id);
+        $query->bindParam(':produits_id', $produits_id);
+        $query->bindParam(':quantite', $quantite);
+
+
+        $cart = $query->execute();
+
+        return $cart;
+    }
 }
+
+
 
