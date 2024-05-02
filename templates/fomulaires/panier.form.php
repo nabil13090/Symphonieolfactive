@@ -135,7 +135,7 @@ if (isset($_POST['valide_panier'])) {
                 <form action="panier.php" method="post">
                     <button type="submit" class="btn btn-primary btn-block btn-lg" name="valide_panier">
                         <div class="d-flex justify-content-between">
-                            <a class=" text-decoration-none text-white " href="/validationPaiment" onclick="return confirm('Voulez vous valider votre panier ?');"><span>Payer</span></a>
+                            <a class=" text-decoration-none text-white " href="/historiqueCompte" onclick="return confirm('Voulez vous valider votre panier ?');"><span>Payer</span></a>
                             <span><?php $_SESSION['total'] = $total;
                                     echo $total ?> €</span>
                         </div>

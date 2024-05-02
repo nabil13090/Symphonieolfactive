@@ -133,6 +133,15 @@ class Produit extends Model
         }
     }
 
+    function findCompte($id)
+    {
+        $query = $this->pdo->prepare('SELECT c.*, cp.*, p.*, i.* FROM commande c JOIN commande_produits cp ON c.commande_id = cp.commande_id JOIN produits p ON cp.produits_id = p.id JOIN image i ON p.imageId = i.id WHERE c.user_id = :id');
+        $query->execute(['id' => $id]);
+        $find = $query->fetchAll();
+        return $find;
+    }
+
+
   
 
 

@@ -47,6 +47,9 @@ $genre = $type->findGenre();
                     <li class="nav-item mx-3">
                         <a class="nav-link bi bi-basket-fill" href="panier"> PANIER</a>
                     </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link bi bi-person-circle" href="historiqueCompte"> MON COMPTE</a>
+                    </li>
                     </li>
                 </ul>
             </div>
