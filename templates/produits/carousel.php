@@ -1,6 +1,8 @@
 <?php
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
+
 use Models\Produit;
+
 $parfums = new Produit();
 $parfumGenre = $parfums->findByCategorie(1);
 ?>
@@ -22,7 +24,7 @@ $parfumGenre = $parfums->findByCategorie(1);
                         ?>
                             <div class="col-md-3 mb-3">
                                 <div class="card">
-                                    <img class="img-fluid" alt="100%x280" src="../../<?= $value['url'] ?>">
+                                    <img class="img-fluid" alt="100%x280<?= $value['nom'] ?>" src="../../<?= $value['url'] ?>">
                                     <div class="card-body">
                                         <h4 class="card-title"><?= $value['nom'] ?></h4>
                                         <p class="card-text"><?= $value['prix'] ?>&nbsp;€</p>

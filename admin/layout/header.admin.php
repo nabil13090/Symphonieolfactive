@@ -1,6 +1,6 @@
 <body>
     <div class="wrapper">
-        <aside id="sidebar" style="min-height: 100%;">
+        <aside id="sidebar" style="height: 100%;">
             <div class="d-flex">
                 <button class="toggle-btn" type="button">
                     <i class="bi bi-list"></i>

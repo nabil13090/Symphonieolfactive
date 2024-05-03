@@ -6,11 +6,15 @@ use Models\Produit;
 
 $parfums = new Produit();
 
+$genres = $parfums->findGenre();
+
 $target_dir = "../assets/images/parfum/"; // Dossier où vous souhaitez stocker les images
 $image_path = null;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $image_path = uploadImageFile('image', $target_dir);
+
+    $current_date = date("Y-m-d H:i:s");
 }
 
 // Si l'image est téléchargée avec succès, insérer le produit dans la base de données
@@ -23,7 +27,10 @@ if ($image_path !== null) {
         'stock' => intval($_POST['stock']),
         'contenances' => intval($_POST['contenances']),
         'rating' => floatval($_POST['rating']),
+        'genreId' => intval($_POST['genreId']),
+        'created_at' => $current_date,
         'imageId' => null // Cette valeur sera remplie après l'insertion de l'image
+
     );
 
     // Étape 1 : Insérer l'image et récupérer son ID
@@ -101,6 +108,15 @@ require_once __DIR__ . "/layout/header.admin.php";
                 <div class="form-group mb-1">
                     <label for="image">Image:</label><br>
                     <input type="file" class="btn btn-primary form-control " id="image" name="image"><br>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre:</label><br>
+                    <select id="genreId" class="form-control" name="genreId">
+                        <option>Sélectionner un genre</option>
+                        <?php foreach ($genres as $genre) : ?>
+                            <option value="<?php echo $genre['id']; ?>"><?php echo $genre['nom']; ?></option>
+                        <?php endforeach; ?>
+                    </select><br>
                 </div>
                 <input type="submit" class="btn btn-primary mt-1" name="submit" value="Ajouter">
             </form>

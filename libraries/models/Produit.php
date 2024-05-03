@@ -89,9 +89,12 @@ class Produit extends Model
     }
 
 
-    public function insert($data)
-    {
-        $query = $this->pdo->prepare('INSERT INTO produits (nom, description, prix, contenances, rating, stock, imageId) VALUES (:nom, :description, :prix, :contenances, :rating, :stock, :imageId)');
+public function insert($data)
+{
+        // Supprimez la ligne où vous définissez $created_at
+        $created_at = date("Y-m-d H:i:s"); // Récupère la date actuelle au format MySQL
+
+        $query = $this->pdo->prepare('INSERT INTO produits (nom, description, prix, contenances, rating, stock, created_at, imageId, genreId) VALUES (:nom, :description, :prix, :contenances, :rating, :stock, :created_at, :imageId, :genreId)');
 
         // Échapper les caractères spéciaux pour éviter les attaques par injection SQL
         $nom = htmlspecialchars($data['nom']);
@@ -103,8 +106,7 @@ class Produit extends Model
         $rating = floatval($data['rating']);
         $stock = intval($data['stock']);
         $imageId = intval($data['imageId']);
-
-        
+        $genreId = intval($data['genreId']);
 
         // Exécution de la requête
         $query->bindParam(':nom', $nom);
@@ -113,12 +115,14 @@ class Produit extends Model
         $query->bindParam(':contenances', $contenances);
         $query->bindParam(':rating', $rating);
         $query->bindParam(':stock', $stock);
+        $query->bindParam(':created_at', $created_at); // Utilisation de la date actuelle
         $query->bindParam(':imageId', $imageId);
-
+        $query->bindParam(':genreId', $genreId);
 
         $insert = $query->execute();
         return $insert;
-    }
+
+}
 
     function insertImage($url)
     {
