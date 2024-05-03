@@ -10,7 +10,7 @@ body {
 
 .txt {
     animation: Scroll 10s linear infinite;
-    color: azure !important;
+    color: rgb(2, 2, 100);
 }
 
 

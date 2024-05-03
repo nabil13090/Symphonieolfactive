@@ -15,10 +15,6 @@ if (!empty($_GET['id'])) {
 
     if ($produit_info) {
 
-        // $genreId = $produit_info['genreId'];
-        // $categorieId = $produit_info['categorieId'];
-
-
         $genre_details = $produit->findGenre($produit_id);
         $categorie_details = $produit->findCategorie($produit_id);
     }

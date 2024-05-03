@@ -33,11 +33,10 @@ if (isset($_GET['id'])) { // 1
 if (isset($_POST['valide_panier'])) {
 
     $date_create = date('y-m-d');
-    $statut = 'en preparation';
-
+    
     try {
         $parfumDetail->getBeginTransaction();
-        $parfumDetail->insertCommande($_SESSION['id'], $date_create, $statut, $_SESSION['total']);
+        $parfumDetail->insertCommande($_SESSION['id'], $date_create, $_SESSION['total'],);
         $commande_id = $parfumDetail->getLastinsert();
             foreach ($_SESSION['panier'] as $produit) {
             $parfumDetail->getCommande($commande_id, $produit['id'], $produit['quantite']);
@@ -49,10 +48,6 @@ if (isset($_POST['valide_panier'])) {
         echo "erreur : " . $e->getMessage();
     }
 }
-
-
-
-
 
 
 ?>

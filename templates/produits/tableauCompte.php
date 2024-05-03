@@ -34,7 +34,7 @@ if (!isset($_SESSION['id'])) {
                     <?php foreach ($clients as $value) { ?>
                         <tr>
                             <td><?= $value['commande_id'] ?></td>
-                            <td><?= $value['staut'] ?></td>
+                            <td><?= $value['statut'] ?></td>
                             <td><?= $value['prix'] ?></td>
                             <td><img class="rounded-circle" height="50px" src="<?= $value['url'] ?>" alt="<?= $value['nom'] ?>"></td>
                             <td><?= $value['quantite'] ?></td>

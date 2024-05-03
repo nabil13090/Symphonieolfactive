@@ -145,10 +145,28 @@ public function insert($data)
         return $find;
     }
 
+    public function updateCommandeStatut($id, $data)
+    {
+        $query = $this->pdo->prepare('UPDATE `commande` SET statut = :statut WHERE commande_id = :id');
 
-  
+        // Assurez-vous que les clés existent dans le tableau $data avant de les utiliser
+        if (isset($data['statut'])) {
+            $statut = htmlspecialchars($data['statut']);
 
+            $query->bindParam(':id', $id);
+            $query->bindParam(':statut', $statut);
 
+            // Exécutez la requête
+            $updateOrder = $query->execute();
+
+            // Redirigez après la mise à jour
+            header("Location: comptes.php");
+            exit; // Arrêtez l'exécution du script après la redirection
+        } else {
+            // Gérez le cas où la clé 'statut' est manquante dans $data
+            return false;
+        }
+    }
 
 
 
