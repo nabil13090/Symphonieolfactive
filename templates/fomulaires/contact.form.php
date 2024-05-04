@@ -32,7 +32,7 @@
                 <form class="row text-uppercase" action="contact" method="post">
                     <div class="col-lg-7 mb-4">
                         <div class="form-floating">
-                            <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="lname" placeholder="Votre nom" required>
+                            <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="lname" placeholder="Votre nom" required autofocus id="lname">
                             <label for="lname" class="p-start-5">Votre nom</label>
                             <div class="invalid-feedback">
                                 Veuillez saisir votre nom.
@@ -84,9 +84,8 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-12 bg">
-                        <button class="btn btn-lg button-gold border border-black rounded-0 text-uppercase fw-bolder my-3  px-5 text-white " type="submit">Envoyer</button>
+                        <button class="btn btn-lg button-gold border border-black rounded-0 text-uppercase fw-bolder my-3  px-5 text-white" type="submit" name="envoyer">Envoyer</button>
                     </div>
                 </form>
             </div>

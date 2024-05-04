@@ -8,6 +8,7 @@ $genre = $type->findGenre();
 ?>
 
 <body>
+    <div id="orijime"></div>
     <div class="top">
         <span class="txt me-4">Symphonie olfactive Aix en Provence</span>
     </div>

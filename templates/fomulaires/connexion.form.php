@@ -1,6 +1,8 @@
 <?php
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
+
 use Models\Users;
+
 $connexion = new Users();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -38,7 +40,7 @@ if (isset($_SESSION['inscrit'])) {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="col-lg-7 mb-4">
             <div class="form-floating">
-                <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="email" placeholder="Votre email" name="email" required>
+                <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="email" placeholder="Votre email" name="email" required autofocus id="email">
                 <label for="lname" class="p-start-5">email</label>
                 <div class="invalid-feedback">
                     Veuillez saisir votre email.
