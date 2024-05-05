@@ -2,26 +2,13 @@
     font-family: Baskerville Old Face;
 }
 
-
 body {
     font-family: Baskerville Old Face;
     color: rgb(2, 2, 100);
 }
 
 .txt {
-    animation: Scroll 10s linear infinite;
     color: rgb(2, 2, 100);
-}
-
-
-@keyframes Scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
 }
 
 .top {
@@ -36,16 +23,13 @@ body {
     margin-bottom: -10px !important;
 }
 
-
 header {
     position: relative;
 }
 
 header p {
-
     position: relative;
     top: 50%;
-
 }
 
 ul li {
@@ -65,6 +49,10 @@ main .btn {
     background-color: rgb(2, 2, 100);
 }
 
+main .btn:hover{
+    color: black !important;
+}
+
 .cards-wrapper {
     display: flex;
 }
@@ -74,13 +62,10 @@ main .btn {
 
 }
 
-
-
 footer {
     background-color: rgb(2, 2, 100) !important;
     color: azure;
     font-family: Baskerville Old Face;
-
 }
 
 .d-flex .pi {
@@ -92,7 +77,6 @@ footer {
 main section h1 {
     font-family: Baskerville Old Face;
 }
-
 
 
 section .avs {
@@ -114,26 +98,3 @@ section .avs {
 
 }
 
-.chargement {
-    border: 10px solid #f3f3f3;
-    border-top: 10px solid #2c3e50;
-    border-bottom: 10px solid #e74c3c;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    -webkit-animation: spin 3s linear infinite;
-    -o-animation: spin 3s linear infinite;
-    animation: spin 3s linear infinite;
-    margin: auto;
-
-}
-
-.val {
-    top: 142%;
-    left: 42%;
-}
-
-.vis {
-    top: 107%;
-    left: 37%;
-}

@@ -1,5 +1,11 @@
 <?php session_start();
-ob_start(); ?>
+ob_start();
+if (!isset($_SESSION['id'])) {
+    // Rediriger vers la page de connexion s'il n'est pas connecté
+    header("Location: monespace");
+    exit();
+} ?>
+
 <section class="text-center pt-4 ">
     <h1>SYMPHONIE OLFACTIVE</h1>
 </section>

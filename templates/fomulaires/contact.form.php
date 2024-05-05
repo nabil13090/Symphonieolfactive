@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="col-12 bg">
-                        <button class="btn btn-lg button-gold border border-black rounded-0 text-uppercase fw-bolder my-3  px-5 text-white" type="submit" name="envoyer">Envoyer</button>
+                        <button class="btn btn-lg button-gold text-hover-dark border border-black rounded-0 text-uppercase fw-bolder my-3 px-5 text-white" type="submit" name="envoyer">Envoyer</button>
                     </div>
                 </form>
             </div>

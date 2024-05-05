@@ -58,6 +58,6 @@
             </div>
             </div>
             <div class="col-12 bg">
-                <button class="btn btn-lg button-hover-gold border border-black rounded-0 text-uppercase fw-bolder my-3 text-white  px-5 " type="submit">M'inscrire</button>
+                <button class="btn btn-lg button-hover-gold border border-black rounded-0 text-uppercase fw-bolder my-3 text-white px-5" type="submit">M'inscrire</button>
             </div>
         </form>

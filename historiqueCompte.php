@@ -1,5 +1,10 @@
 <?php session_start();
-ob_start(); ?>
+ob_start();
+if (!isset($_SESSION['id'])) {
+    // Rediriger vers la page de connexion s'il n'est pas connecté
+    header("Location: ../monespace");
+    exit();
+} ?>
 <section class="text-center pt-5">
     <h1 class="mb-3">SYMPHONIE OLFACTIVE</h1>
     <h3>Le compte de <strong><?php echo ucfirst($_SESSION["nom"]) ?></h3>

@@ -9,7 +9,7 @@ $clients = $client->findCompte($currentId);
 
 if (!isset($_SESSION['id'])) {
     // Rediriger vers la page de connexion s'il n'est pas connecté
-    header("Location: ../monespace");
+    header("Location: monespace");
     exit();
 }
 
