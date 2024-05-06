@@ -3,9 +3,9 @@ require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
 
 use Models\Produit;
 
-$client = new Produit();
+$commande = new Produit();
 $currentId = $_SESSION['id'];
-$clients = $client->findCompte($currentId);
+$commandes = $commande->findCompte($currentId);
 
 if (!isset($_SESSION['id'])) {
     // Rediriger vers la page de connexion s'il n'est pas connecté
@@ -31,7 +31,7 @@ if (!isset($_SESSION['id'])) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($clients as $value) { ?>
+                    <?php foreach ($commandes as $value) { ?>
                         <tr>
                             <td><?= $value['commande_id'] ?></td>
                             <td><?= $value['statut'] ?></td>
@@ -41,12 +41,33 @@ if (!isset($_SESSION['id'])) {
                             <td><?= $value['nom'] ?></td>
                             <td><?= $value['date_create'] ?></td>
                         </tr>
-                    <?php }  ?>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
-        <div class=" d-flex justify-content-end mb-5 me-5 ">
-            <h3> Prix Total : <strong> <?= $value['price'] ?> €</strong></h3>
-        </div>
+            <?php
+            $sum = 0;
+            if (count($commandes) > 0) {
+                // Tableau associatif pour stocker les prix par commande_id
+                $unique_prices = [];
+    
+                // Itération sur les données initiales
+                foreach ($commandes as $item) {
+                    $commande_id = $item['commande_id'];
+                    $price = $item['price'];
+    
+                    // Si le prix pour cette commande_id n'existe pas encore dans le tableau, l'ajouter
+                    if (!isset($unique_prices[$commande_id])) {
+                        $unique_prices[$commande_id] = $price;
+                    }
+                }
+                // Tableau final contenant uniquement les prix de chaque commande_id
+                $final_prices = array_values($unique_prices);
+
+                $sum = array_sum($final_prices);
+            }?>
+            <div class=" d-flex justify-content-end mb-5 me-5 ">
+                <h3> Prix Total : <strong> <?= $sum ?> €</strong></h3>
+            </div>
     </div>
 </section>

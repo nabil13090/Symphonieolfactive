@@ -168,6 +168,38 @@ public function insert($data)
         }
     }
 
+    public function insertAvis($data)
+    {
+       
+
+        $query = $this->pdo->prepare('INSERT INTO `avis`(`nom`, `rating`, `desciption`, `image`) VALUES (:nom, :rating, :desciption, :image)');
+
+        // Échapper les caractères spéciaux pour éviter les attaques par injection SQL
+        $nom = htmlspecialchars($data['nom']);
+        $rating = floatval($data['rating']);
+        $desciption = ($data['desciption']);
+        $image = ($data['image']);
+
+        // Exécution de la requête
+        $query->bindParam(':nom', $nom);
+        $query->bindParam(':rating', $rating);
+        $query->bindParam(':desciption', $desciption);
+        $query->bindParam(':image', $image);
+
+        $insert = $query->execute();
+        return $insert;
+    }
+
+    function findCommande($id)
+    {
+        $query = $this->pdo->prepare('SELECT * FROM commande WHERE commande_id = :id');
+        $query->execute(['id' => $id]);
+        $find = $query->fetch();
+        return $find;
+    }
+
+
+
 
 
 }

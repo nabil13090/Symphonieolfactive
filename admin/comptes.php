@@ -39,7 +39,9 @@ require_once __DIR__ . "/layout/header.admin.php";
                 <a class="btn btn-outline-danger mt-auto" href="supprimeCompte.php?id=<?= $value['id'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');"><i class="bi bi-x-circle text-danger "></i> SUPPRIMER</a>
               </td>
               <td>
-                  <a class="btn btn-outline-success  mt-auto" href="comptesClient.php?id=<?= $value['id'] ?>"><i class="bi bi-arrow-repeat"></i> COMMANDE</a>
+                <?php if ($value['role'] !== 'admin') { ?>
+                <a class="btn btn-outline-success  mt-auto" href="comptesClient.php?id=<?= $value['id'] ?>"><i class="bi bi-arrow-repeat"></i> COMMANDE</a>
+                <?php } ?>
               </td>
             </tr>
           <?php }  ?>

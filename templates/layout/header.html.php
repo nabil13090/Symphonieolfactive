@@ -53,9 +53,11 @@ $genre = $type->findGenre();
                         </li>
                     <?php } ?>
                     <?php if (!empty($_SESSION['id'])) { ?>
-                        <li class="nav-item mx-3">
-                            <a class="nav-link bi bi-person" href="historiqueCompte"> MON COMPTE</a>
-                        </li>
+                        <?php if ($_SESSION['role'] !== 'admin') { ?>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link bi bi-person" href="historiqueCompte"> MON COMPTE</a>
+                            </li>
+                        <?php } ?>
                     <?php } ?>
                 </ul>
             </div>

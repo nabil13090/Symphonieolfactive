@@ -5,7 +5,6 @@ if (!isset($_SESSION['id'])) {
     header("Location: monespace");
     exit();
 } ?>
-
 <section class="text-center pt-4 ">
     <h1>SYMPHONIE OLFACTIVE</h1>
 </section>
