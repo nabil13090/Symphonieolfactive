@@ -22,8 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $desciption = $_POST['desciption'];
     $image = "assets\images\avis\anonyme.jpg";
     
-
-
     // Insérer l'avis
     $result = $client->insertAvis([
         'nom' => $nom,
@@ -32,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'image' => $image
      
     ]);
-
     if ($result) {
         echo "L'avis a été inséré avec succès !";
     } else {
@@ -41,11 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-<?php foreach ($clients as $value) { ?>
     <div>
-        <p> Votre commande <strong><?= $value['commande_id'] ?></strong> a été validée. Vous pouvez retrouver le détail de votre commande dans votre espace <strong>Mon Compte</strong>.</p>
+        <p> Votre commande a été validée, vous pouvez retrouver le détail de votre commande dans votre espace <strong>Mon Compte</strong>.</p>
     </div>
-<?php } ?>
 <h4>Symfony Olfactive vous remercie de votre achat</h4>
 <div class=" d-flex justify-content-center mt-4 ">
     <div class=" border border-black rounded rounded " style="max-width: 400px; max-height:300px;">

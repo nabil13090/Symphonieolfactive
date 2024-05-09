@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="/plustard.php" class="sidebar-link text-decoration-none">
+                    <a href="/deconnexion.php" class="sidebar-link text-decoration-none">
                         <i class="bi bi-box-arrow-right"></i>
                         <span>Deconnexion</span>
                     </a>

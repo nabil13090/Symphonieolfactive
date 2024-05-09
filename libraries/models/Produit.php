@@ -198,6 +198,13 @@ public function insert($data)
         return $find;
     }
 
+    public function getBannieresByTitrePage($titrePage)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM `bannieres` WHERE `TitrePage` = :titrePage");
+        $query->execute([':titrePage' => $titrePage]);
+        $bannieres = $query->fetchAll();
+        return $bannieres;
+    }
 
 
 

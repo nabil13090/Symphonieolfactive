@@ -1,5 +1,12 @@
 <?php session_start();
-ob_start(); ?>
+ob_start();
+require_once dirname(__DIR__, 1) . "/Symfonyolfactive/libraries/autoload.php";
+
+use Models\Produit;
+
+$votreObjet = new Produit();
+$titrePage = "Mon Espace"; // Définir le titre de la page actuelle
+$bannieres = $votreObjet->getBannieresByTitrePage($titrePage); ?>
 <section class="text-center pt-4">
     <h1>SYMPHONIE OLFACTIVE</h1>
 </section>
@@ -15,8 +22,17 @@ ob_start(); ?>
 </div>
 <?php require_once __DIR__ . "/templates/produits/cardsAvis.php"; ?>
 <?php
-$title = "Mon Espace";
-$img = "assets/background/monespace.jpg";
-$titre = "MON ESPACE";
+$title = ""; // Initialisez le titre
+$img = ""; // Initialisez l'image
+$titre = ""; // Initialisez le titre du message
+
+// Vérifiez s'il y a des bannières récupérées
+if (!empty($bannieres)) {
+    // Utilisez les valeurs de la première bannière pour les variables de la template
+    $title = $bannieres[0]['TitrePage'];
+    $img = $bannieres[0]['Image'];
+    $titre = $bannieres[0]['Message'];
+}
+
 $content = ob_get_clean(); ?>
 <?php require "template.php"; ?>

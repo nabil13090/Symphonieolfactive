@@ -16,7 +16,7 @@ $genre = $type->findGenre();
         <?php if (!empty($_SESSION["id"])) : ?>
             <h4 class="mt-2">Bienvenue <strong><?php echo ucfirst($_SESSION["nom"]) ?>
                 </strong></h4><?php endif; ?>
-        <div><a href="plustard.php" class=" nav-link me-3 align-items-center mt-2 bi bi-box-arrow-left"></a>
+        <div><a href="deconnexion.php" class=" nav-link me-3 align-items-center mt-2 bi bi-box-arrow-left"></a>
         </div>
     </div>
     <div class="d-flex justify-content-center pt-2">
