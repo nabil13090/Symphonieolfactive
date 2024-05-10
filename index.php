@@ -5,9 +5,9 @@ require_once dirname(__DIR__, 1) . "/Symfonyolfactive/libraries/autoload.php";
 
 use Models\Produit;
 
-$votreObjet = new Produit();
+$votreBanniere = new Produit();
 $titrePage = "Accueil"; // Définir le titre de la page actuelle
-$bannieres = $votreObjet->getBannieresByTitrePage($titrePage); ?>
+$bannieres = $votreBanniere->getBannieresByTitrePage($titrePage); ?>
 <section class="text-center py-4">
     <h1>SYMPHONIE OLFACTIVE</h1>
     <div class="mt-5">

@@ -1,12 +1,9 @@
 <?php
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
-
 use Models\Produit;
-
 $type = new Produit();
 $genre = $type->findGenre();
 ?>
-
 <body>
     <div id="orijime"></div>
     <div class="top">

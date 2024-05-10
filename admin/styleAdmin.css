@@ -36,6 +36,14 @@ body {
     background-color: #fafbfe;
 }
 
+section{
+    margin-left: 100px;
+}
+
+#sidebar.expand ~ section{
+    margin-left: 280px;
+}
+
 #sidebar {
     width: 70px;
     min-width: 70px;
@@ -46,6 +54,8 @@ body {
     background-color: #0e2238;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 0;
    
 }
 

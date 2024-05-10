@@ -1,4 +1,5 @@
 <?php
+
 namespace Models;
 
 class Produit extends Model
@@ -92,7 +93,7 @@ class Produit extends Model
 public function insert($data)
 {
         // Supprimez la ligne où vous définissez $created_at
-        $created_at = date("Y-m-d H:i:s"); // Récupère la date actuelle au format MySQL
+        $created_at = date("Y-m-d"); // Récupère la date actuelle au format MySQL
 
         $query = $this->pdo->prepare('INSERT INTO produits (nom, description, prix, contenances, rating, stock, created_at, imageId, genreId) VALUES (:nom, :description, :prix, :contenances, :rating, :stock, :created_at, :imageId, :genreId)');
 

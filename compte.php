@@ -3,9 +3,9 @@ require_once dirname(__DIR__, 1) . "/Symfonyolfactive/libraries/autoload.php";
 
 use Models\Produit;
 
-$votreObjet = new Produit();
+$votrebannieres = new Produit();
 $titrePage = "Creation Compte"; // Définir le titre de la page actuelle
-$bannieres = $votreObjet->getBannieresByTitrePage($titrePage);
+$bannieres = $votrebannieres->getBannieresByTitrePage($titrePage);
 ?>
 <section class="text-center pt-4">
     <h1>SYMPHONIE OLFACTIVE</h1>
@@ -54,7 +54,6 @@ $bannieres = $votreObjet->getBannieresByTitrePage($titrePage);
 $title = ""; // Initialisez le titre
 $img = ""; // Initialisez l'image
 $titre = "Mon Compte"; // Initialisez le titre du message
-
 // Vérifiez s'il y a des bannières récupérées
 if (!empty($bannieres)) {
     // Utilisez les valeurs de la première bannière pour les variables de la template

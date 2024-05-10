@@ -9,9 +9,9 @@ require_once dirname(__DIR__, 1) . "/Symfonyolfactive/libraries/autoload.php";
 
 use Models\Produit;
 
-$votreObjet = new Produit();
+$votrebannieres = new Produit();
 $titrePage = "Historique Compte"; // Définir le titre de la page actuelle
-$bannieres = $votreObjet->getBannieresByTitrePage($titrePage); ?>
+$bannieres = $votrebannieres->getBannieresByTitrePage($titrePage); ?>
 <section class="text-center pt-5">
     <h1 class="mb-3">SYMPHONIE OLFACTIVE</h1>
     <h3>Le compte de <strong><?php echo ucfirst($_SESSION["nom"]) ?></h3>

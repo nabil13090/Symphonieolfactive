@@ -49,7 +49,13 @@ require_once __DIR__ . "/layout/header.admin.php";
                     <tbody>
 
                         <tr>
-                            <td><input type="text" class="form-control" name="statut" value="<?= $orderProducts['statut'] ?>"></td>
+                            <td>
+                                <select name="statut" class=" form-select">
+                                    <option <?php if ($orderProducts['statut'] == "preparation") echo "selected"; ?> value="preparation">Preparation</option>
+                                    <option <?php if ($orderProducts['statut'] == "prete") echo "selected"; ?> value="prete">Prete</option>
+                                    <option <?php if ($orderProducts['statut'] == "recupere") echo "selected"; ?> value="recupere">Recupere</option>
+                                </select>
+                            </td>
                             <td><?= $orderProducts['price'] ?></td>
                             <td><button type="submit" class="btn btn-primary">Mettre à jour</button></td>
                         </tr>

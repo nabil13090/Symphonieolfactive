@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_SESSION['role'] === 'admin') {
             header('Location: admin/dashBord.php');
         } else {
-            header('Location: index.php');
+            header('Location: index');
         }
         exit();
     } else {

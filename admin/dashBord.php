@@ -14,5 +14,7 @@ if ($_SESSION['role'] !== 'admin') {
 }
 require_once __DIR__ . "/layout/head.admin.php";
 require_once __DIR__ . "/layout/header.admin.php"; ?>
-  <h2 class=" text-lg-center ">Modification du site Symphonie OLFACTIVE</h2>
+<section>
+  <h2 class=" text-center mx-sm-auto ms-5">Modification du site Symphonie OLFACTIVE</h2>
+</section>
 <?php require_once __DIR__ . "/layout/footer.admin.php"; ?>

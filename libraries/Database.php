@@ -9,8 +9,6 @@ class Database
     private static $instance;
 
 
-    
-
     public static function getPdo(): PDO 
 {
     if(self::$instance  == null) {
