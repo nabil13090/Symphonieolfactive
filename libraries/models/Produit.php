@@ -207,6 +207,17 @@ public function insert($data)
         return $bannieres;
     }
 
+    public function deleteCommandeAndProduits($commande_id)
+    {
+        $sql_delete_commande_produits = "DELETE FROM `commande_produits` WHERE `commande_id` = :commande_id";
+        $sql_delete_commande = "DELETE FROM `commande` WHERE `commande_id` = :commande_id";
+        $query_delete_commande_produits = $this->pdo->prepare($sql_delete_commande_produits);
+        $query_delete_commande_produits->execute([':commande_id' => $commande_id]);
+        $query_delete_commande = $this->pdo->prepare($sql_delete_commande);
+        $query_delete_commande->execute([':commande_id' => $commande_id]);
+        return "Commande supprimée avec succès.";
+      
+    }
 
 
 

@@ -2,9 +2,7 @@
 session_start();
 ob_start();
 require_once dirname(__DIR__, 1) . "/Symfonyolfactive/libraries/autoload.php";
-
 use Models\Produit;
-
 $votreBanniere = new Produit();
 $titrePage = "Accueil"; // Définir le titre de la page actuelle
 $bannieres = $votreBanniere->getBannieresByTitrePage($titrePage); ?>

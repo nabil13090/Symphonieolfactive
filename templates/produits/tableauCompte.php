@@ -13,9 +13,13 @@ if (!isset($_SESSION['id'])) {
     header("Location: monespace");
     exit();
 }
-
-
-
+// Vérifier si un formulaire a été soumis pour supprimer une commande
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_commande"])) {
+    $commande_id = $_POST["commande_id"];
+    $commande->deleteCommandeAndProduits($commande_id);
+    header("Location: {$_SERVER['PHP_SELF']}");
+    exit();
+}
 ?>
 <section class="intro">
     <div class="border border-black rounded rounded ">
@@ -43,34 +47,43 @@ if (!isset($_SESSION['id'])) {
                             <td><?= $value['quantite'] ?></td>
                             <td><?= $value['nom'] ?></td>
                             <td><?= $value['date_create'] ?></td>
+                            <td>
+                                <form method='post'>
+                                    <input type="hidden" name="commande_id" value="<?= $value['commande_id'] ?>">
+                                    <button type="submit" name="delete_commande" <?php if ($value['statut'] != "prete") { ?> disabled <?php } ?> >
+                                        Recupere la commande
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
-                        <?php } ?>
-                    </tbody>
+                    <?php } ?>
+                </tbody>
             </table>
         </div>
-            <?php
-            $sum = 0;
-            if (count($commandes) > 0) {
-                // Tableau associatif pour stocker les prix par commande_id
-                $unique_prices = [];
-                
-                // Itération sur les données initiales
-                foreach ($commandes as $item) {
-                    $commande_id = $item['commande_id'];
-                    $price = $item['price'];
-                    
-                    // Si le prix pour cette commande_id n'existe pas encore dans le tableau, l'ajouter
-                    if (!isset($unique_prices[$commande_id])) {
-                        $unique_prices[$commande_id] = $price;
-                    }
+        <?php
+        $sum = 0;
+        if (count($commandes) > 0) {
+            // Tableau associatif pour stocker les prix par commande_id
+            $unique_prices = [];
+
+            // Itération sur les données initiales
+            foreach ($commandes as $item) {
+                $commande_id = $item['commande_id'];
+                $price = $item['price'];
+
+                // Si le prix pour cette commande_id n'existe pas encore dans le tableau, l'ajouter
+                if (!isset($unique_prices[$commande_id])) {
+                    $unique_prices[$commande_id] = $price;
                 }
-                // Tableau final contenant uniquement les prix de chaque commande_id
-                $final_prices = array_values($unique_prices);
-                
-                $sum = array_sum($final_prices);
-            }?>
-            <div class=" d-flex justify-content-end mb-5 me-5 ">
-                <h3> Prix Total : <strong> <?= $sum ?> €</strong></h3>
-            </div>
+            }
+            // Tableau final contenant uniquement les prix de chaque commande_id
+            $final_prices = array_values($unique_prices);
+
+            $sum = array_sum($final_prices);
+        } ?>
+        <div class=" d-flex justify-content-end mb-5 me-5 ">
+            <h3> Prix Total : <strong> <?= $sum ?> €</strong></h3>
         </div>
-    </section>
+
+    </div>
+</section>
