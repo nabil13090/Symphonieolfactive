@@ -49,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_commande"])) {
                             <td><?= $value['date_create'] ?></td>
                             <td>
                                 <form method='post'>
-                                    <input type="hidden" name="commande_id" value="<?= $value['commande_id'] ?>">
-                                    <button type="submit" name="delete_commande" <?php if ($value['statut'] != "prete") { ?> disabled <?php } ?> >
+                                    <input type="hidden" class=" text-black" name="commande_id" value="<?= $value['commande_id'] ?>">
+                                    <button type="submit" class=" btn bg-success  " name="delete_commande" <?php if ($value['statut'] != "prete") { ?> disabled <?php } ?> >
                                         Recupere la commande
                                     </button>
                                 </form>
