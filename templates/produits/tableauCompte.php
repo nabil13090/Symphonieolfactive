@@ -3,7 +3,6 @@ require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
 
 use Models\Produit;
 
-
 $commande = new Produit();
 $currentId = $_SESSION['id'];
 $commandes = $commande->findCompte($currentId);
@@ -27,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_commande"])) {
         <div class="table-responsive">
             <table class="table table-borderless mb-5 text-lg-center ">
                 <thead>
-                    <tr>
+                    <tr class="d-none d-sm-table-row">
                         <th scope="col">Numero de commande</th>
                         <th scope="col">Statut</th>
                         <th scope="col">Prix</th>
@@ -35,11 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_commande"])) {
                         <th scope="col">Quantité</th>
                         <th scope="col">Nom</th>
                         <th scope="col">Date d'achat</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($commandes as $value) { ?>
-                        <tr>
+                        <tr class="d-none d-sm-table-row">
                             <td><?= $value['commande_id'] ?></td>
                             <td><?= $value['statut'] ?></td>
                             <td><?= $value['prix'] ?></td>
@@ -49,11 +49,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_commande"])) {
                             <td><?= $value['date_create'] ?></td>
                             <td>
                                 <form method='post'>
-                                    <input type="hidden" class=" text-black" name="commande_id" value="<?= $value['commande_id'] ?>">
-                                    <button type="submit" class=" btn bg-success  " name="delete_commande" <?php if ($value['statut'] != "prete") { ?> disabled <?php } ?> >
+                                    <input type="hidden" class="text-black" name="commande_id" value="<?= $value['commande_id'] ?>">
+                                    <button type="submit" class="btn bg-success" name="delete_commande" <?php if ($value['statut'] != "prete") { ?> disabled <?php } ?>>
                                         Recupere la commande
                                     </button>
                                 </form>
+                            </td>
+                        </tr>
+                        <!-- Mobile view -->
+                        <tr class="d-sm-none">
+                            <td colspan="8">
+                                <div class="mobile-row">
+                                    <div><strong>Numero de commande:</strong> <?= $value['commande_id'] ?></div>
+                                    <div><strong>Statut:</strong> <?= $value['statut'] ?></div>
+                                    <div><strong>Prix:</strong> <?= $value['prix'] ?></div>
+                                    <div><strong>Parfums:</strong> <img class="rounded-circle" height="50px" src="<?= $value['url'] ?>" alt="<?= $value['nom'] ?>"></div>
+                                    <div><strong>Quantité:</strong> <?= $value['quantite'] ?></div>
+                                    <div><strong>Nom:</strong> <?= $value['nom'] ?></div>
+                                    <div><strong>Date d'achat:</strong> <?= $value['date_create'] ?></div>
+                                    <div>
+                                        <form method='post'>
+                                            <input type="hidden" class="text-black" name="commande_id" value="<?= $value['commande_id'] ?>">
+                                            <button type="submit" class="btn bg-success" name="delete_commande" <?php if ($value['statut'] != "prete") { ?> disabled <?php } ?>>
+                                                Recupere la commande
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     <?php } ?>
@@ -81,9 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_commande"])) {
 
             $sum = array_sum($final_prices);
         } ?>
-        <div class=" d-flex justify-content-end mb-5 me-5 ">
+        <div class="d-flex justify-content-end mb-5 me-5">
             <h3> Prix Total : <strong> <?= $sum ?> €</strong></h3>
         </div>
-
     </div>
 </section>

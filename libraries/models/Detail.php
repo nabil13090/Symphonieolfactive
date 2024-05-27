@@ -73,7 +73,8 @@ class Detail extends Model
 
     public function updateProduits($id, $data)
     {
-        $query = $this->pdo->prepare('UPDATE produits SET nom = :nom, description = :description, prix = :prix, contenances = :contenances, rating = :rating,
+        $query = $this->pdo->prepare('UPDATE produits SET 
+        nom = :nom, description = :description, prix = :prix, contenances = :contenances, rating = :rating,
          stock = :stock, genreId = :genreId, categorieId = :categorieId
         WHERE id = :id;');
 

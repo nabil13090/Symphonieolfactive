@@ -53,7 +53,8 @@ class Produit extends Model
 
     public function findAdminProduits()
     {
-        $query = $this->pdo->prepare("SELECT p.id, p.nom, p.prix, p.rating, g.nom as name, p.stock, p.contenances FROM `produits` p INNER JOIN genres g ON p.genreId = g.id");
+        $query = $this->pdo->prepare("SELECT p.id, p.nom, p.prix, p.rating, g.nom as name, p.stock, p.contenances FROM `produits` p 
+        INNER JOIN genres g ON p.genreId = g.id");
 
         $query->execute();
         $parfum = $query->fetchAll();
@@ -219,6 +220,10 @@ public function insert($data)
       
     }
 
+    function getCartItemCount()
+    {
+        return isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
+    }
 
 
 }

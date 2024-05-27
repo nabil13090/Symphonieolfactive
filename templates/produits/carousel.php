@@ -22,7 +22,7 @@ $parfumGenre = $parfums->findByCategorie(1);
                                 $active = ''; // On enlève la classe active après le premier élément
                             }
                         ?>
-                            <div class="col-md-3 mb-3">
+                            <div class="col-12 col-sm-6 col-md-3 mb-3">
                                 <div class="card">
                                     <img class="img-fluid" alt="100%x280<?= $value['nom'] ?>" src="../../<?= $value['url'] ?>">
                                     <div class="card-body">

@@ -38,6 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+<!-- /* Le code HTML fourni crée un formulaire permettant aux utilisateurs de laisser un avis ou des
+commentaires sur leur expérience avec Symfony Olfactive. Voici un aperçu de ce que fait chaque
+partie du code : */ -->
     <div>
         <p> Votre commande a été validée, vous pouvez retrouver le détail de votre commande dans votre espace <strong>Mon Compte</strong>.</p>
     </div>

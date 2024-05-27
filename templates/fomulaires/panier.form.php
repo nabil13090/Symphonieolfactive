@@ -23,6 +23,8 @@ if (isset($_GET['id'])) { // 1
 }
 
 
+/* Ce bloc de code gère le processus lorsque l'utilisateur soumet le formulaire portant le nom
+"valide_panier". Voici un aperçu de ce qu'il fait : */
 if (isset($_POST['valide_panier'])) {
 
     $date_create = date('y-m-d');
@@ -75,15 +77,7 @@ if (isset($_POST['valide_panier'])) {
                     </td>
                     <td class="align-middle">
                         <div class="d-flex flex-row">
-                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                <i class="fas fa-minus"></i>
-                            </button>
-
                             <input id="form1" min="0" name="quantity" value="<?= $item['quantite'] ?>" type="number" class="form-control form-control-sm" style="width: 50px;" />
-
-                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                <i class="fas fa-plus"></i>
-                            </button>
                         </div>
                     </td>
                     <td class="align-middle">

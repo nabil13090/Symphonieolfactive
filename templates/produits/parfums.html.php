@@ -31,7 +31,8 @@ $parfum = $parfums->findByCategorie();
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators circle-indicators z-1">
                     <?php foreach ($parfum as $key => $value) { ?>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $key ?>" <?php if ($key === 0) echo 'class="active"'; ?> aria-label="Slide <?= $key + 1 ?>"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $key ?>" 
+                        <?php if ($key === 0) echo 'class="active"'; ?> aria-label="Slide <?= $key + 1 ?>"></button>
                     <?php } ?>
                 </div>
                 <div class="carousel-inner">

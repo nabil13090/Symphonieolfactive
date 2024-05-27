@@ -1,4 +1,5 @@
-<?php ob_start();
+<?php 
+ob_start();
 require_once dirname(__DIR__, 1) . "/Symfonyolfactive/libraries/autoload.php";
 
 use Models\Produit;

@@ -1,19 +1,19 @@
 <?php
 
 namespace Controllers;
-
 use Models\Detail;
 use Http;
 use Renderer;
-
 
 class HomeController extends Controller
 {
     protected $carouselProduits;
     protected $avisProduits;
     
-    
-
+/**
+ * Le constructeur initialise deux instances de la classe Produit et appelle des méthodes spécifiques
+ * sur chaque instance.
+ */
     public function __construct()
     {
         $this->carouselProduits =  new \Models\Produit();
@@ -22,8 +22,9 @@ class HomeController extends Controller
         $this->avisProduits->findAvis();
     }
 
-    
-
+/**
+ * La fonction « caroussel » récupère les produits par catégorie et restitue un modèle de carrousel.
+ */
     public function caroussel()
     {
         $carouselProduits =  $this->carouselProduits;
@@ -31,6 +32,10 @@ class HomeController extends Controller
        require_once dirname(__DIR__, 2) . "/templates/produits/index.php";
     }
 
+/**
+ * La fonction « avis » récupère les avis sur les produits et les restitue dans un fichier modèle pour
+ * affichage.
+ */
     public function avis()
     {
         $avisProduits =  $this->avisProduits;

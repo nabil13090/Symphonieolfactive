@@ -1,16 +1,22 @@
 <?php
 require_once dirname(__DIR__, 2) . "/libraries/autoload.php";
 
+/* L'extrait de code que vous avez fourni est écrit en PHP et effectue les actions suivantes : */
 use Models\Detail;
+/* L'instruction `use Models\Detail;` en PHP importe la classe `Detail` depuis l'espace de noms
+`Models`. Cela vous permet de faire référence à la classe `Detail` directement par son nom dans
+l'espace de noms actuel sans avoir à spécifier le chemin complet de l'espace de noms à chaque fois
+que vous l'utilisez dans le code. */
 use Models\Produit;
 
 $rating = new Produit;
+/*crée une nouvelle instance de la classe `Produit` et l'assigne à la
+variable ``. Cela vous permet d'utiliser les méthodes et propriétés de la classe `Produit`
+via l'objet `` dans le code suivant. */
 $parfumDetail = new Detail();
 $currentid = $_GET['id'];
 
 $detail = $parfumDetail->find($currentid);
-
-
 ?>
 <div class="d-flex justify-content-center my-4  ">
     <div class="card mb-3" style="max-width: 800px;">
