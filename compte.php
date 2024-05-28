@@ -1,4 +1,4 @@
-<?php 
+<?php
 ob_start();
 require_once dirname(__DIR__, 1) . "/Symfonyolfactive/libraries/autoload.php";
 
@@ -51,6 +51,7 @@ $bannieres = $votrebannieres->getBannieresByTitrePage($titrePage);
     </div>
 </div>
 <?php require_once __DIR__ . "/templates/produits/cardsAvis.php"; ?>
+<script src="validation.js"></script>
 <?php
 $title = ""; // Initialisez le titre
 $img = ""; // Initialisez l'image

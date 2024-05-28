@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_commande"])) {
                                 </form>
                             </td>
                         </tr>
-                        <!-- Mobile view -->
+                        <!-- vue Mobile -->
                         <tr class="d-sm-none">
                             <td colspan="8">
                                 <div class="mobile-row">

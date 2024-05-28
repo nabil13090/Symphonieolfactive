@@ -40,55 +40,60 @@ function addCLass(element, regex, value, valid) {
     }
 }
 
-// Execute la fonction addClass(element, regex, value)
-lnameInput.addEventListener('input', (e) => {
-    addCLass(lnameInput, UserRegex, e.target.value, lnameValid);
-    if (lnameInput.classList.contains('is-valid')) {
-        lnameValid = true;
-        lnameValid = e.target.value;
-    } else {
-        lnameValid = false;
-        lnameValue = "";
-    }
-});
 
-fnameInput.addEventListener('input', (e) => {
-    addCLass(fnameInput, UserRegex, e.target.value, fnameValid);
-    if (fnameInput.classList.contains('is-valid')) {
-        fnameValid = true;
-        fnameValid = e.target.value;
-    } else {
-        fnameValid = false;
-        fnameValue = "";
-    }
-});
 
-phoneInput.addEventListener('input', (e) => {
-    ;
-    let phoneNumber = e.target.value;
-    // Supprime les espaces dans le numéro
-    phoneNumber = phoneNumber.replace(/ /g, '');
-    // Remplace le premier 0 par +33
-    phoneNumber = phoneNumber.replace(/^0/, '+33');
-    // Execute la fonction addClass
-    addCLass(phoneInput, PhoneNumberRegex, phoneNumber, phoneValid);
-    phoneInput.classList.contains('is-valid') ? phoneValid = true : phoneValid = false;
-})
+    fnameInput.addEventListener('input', (e) => {
+        addCLass(fnameInput, UserRegex, e.target.value, fnameValid);
+        if (fnameInput.classList.contains('is-valid')) {
+            fnameValid = true;
+            fnameValid = e.target.value;
+        } else {
+            fnameValid = false;
+            fnameValue = "";
+        }
+    });
 
-emailInput.addEventListener('input', (e) => {
-    addCLass(emailInput, EmailRegex, e.target.value, emailValid);
-    emailInput.classList.contains('is-valid') ? emailValid = true : emailValid = false;
-});
 
-subjectInput.addEventListener('input', (e) => {
-    addCLass(subjectInput, SubjectRegex, e.target.value, subjectValid);
-    subjectInput.classList.contains('is-valid') ? subjectValid = true : subjectValid = false;
-});
+    lnameInput.addEventListener('input', (e) => {
+        addCLass(lnameInput, UserRegex, e.target.value, lnameValid);
+        if (lnameInput.classList.contains('is-valid')) {
+            lnameValid = true;
+            lnameValid = e.target.value;
+        } else {
+            lnameValid = false;
+            lnameValue = "";
+        }
+    });
 
-msgTextArea.addEventListener('input', (e) => {
-    addCLass(msgTextArea, MessageRegex, e.target.value, msgValid);
-    msgTextArea.classList.contains('is-valid') ? msgValid = true : msgValid = false;
-});
+
+    phoneInput.addEventListener('input', (e) => {
+        let phoneNumber = e.target.value;
+        // Supprime les espaces dans le numéro
+        phoneNumber = phoneNumber.replace(/ /g, '');
+        // Remplace le premier 0 par +33
+        phoneNumber = phoneNumber.replace(/^0/, '+33');
+        // Execute la fonction addClass
+        addCLass(phoneInput, PhoneNumberRegex, phoneNumber, phoneValid);
+        phoneInput.classList.contains('is-valid') ? phoneValid = true : phoneValid = false;
+    })
+
+    emailInput.addEventListener('input', (e) => {
+        addCLass(emailInput, EmailRegex, e.target.value, emailValid);
+        emailInput.classList.contains('is-valid') ? emailValid = true : emailValid = false;
+    });
+
+
+    subjectInput.addEventListener('input', (e) => {
+        addCLass(subjectInput, SubjectRegex, e.target.value, subjectValid);
+        subjectInput.classList.contains('is-valid') ? subjectValid = true : subjectValid = false;
+    });
+
+
+    msgTextArea.addEventListener('input', (e) => {
+        addCLass(msgTextArea, MessageRegex, e.target.value, msgValid);
+        msgTextArea.classList.contains('is-valid') ? msgValid = true : msgValid = false;
+    });
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();

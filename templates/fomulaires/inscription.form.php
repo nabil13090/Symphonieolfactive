@@ -31,7 +31,7 @@
             <?php endif; ?>
             <div class="col-lg-7 mb-4">
                 <div class="form-floating">
-                    <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="lname" placeholder="Votre nom" name="nom" required autofocus id="lname">
+                    <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="lname" placeholder="Votre nom" name="nom" required >
                     <label for="lname" class="p-start-5">Votre nom</label>
                     <div class="invalid-feedback">
                         Veuillez saisir votre nom.

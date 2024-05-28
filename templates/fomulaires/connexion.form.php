@@ -40,8 +40,8 @@ if (isset($_SESSION['inscrit'])) {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="col-lg-7 mb-4">
             <div class="form-floating">
-                <input type="text" class="form-control border border-black rounded-0 bg-lightgrey" id="email" placeholder="Votre email" name="email" required autofocus id="email">
-                <label for="lname" class="p-start-5">email</label>
+                <input type="email" class="form-control border border-black rounded-0 bg-lightgrey" id="emailInput" placeholder="Votre email" name="email" required>
+                <label for="emailInput" class="p-start-5">email</label>
                 <div class="invalid-feedback">
                     Veuillez saisir votre email.
                 </div>
